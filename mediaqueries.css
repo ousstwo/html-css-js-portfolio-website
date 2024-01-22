@@ -1,0 +1,109 @@
+/* Adjustments for responsiveness */
+@media (max-width: 1350px) {
+    /* Styles for width <= 1350px */
+    #welcome-section {
+        padding-top: calc((100vw / 1.778)); /* Maintain 1.35:1 aspect ratio */
+        margin-top: 0; /* Keep the section under the navbar */
+    }
+
+    /* Move the logo to the left and show the hamburger menu */
+    #desktop-nav {
+        justify-content: space-between;
+        padding-left: 20px;
+        padding-right: 20px;
+        height: 14.64vh; /* 11.55vh * 1.25 */
+    }
+
+    .hamburger-icon {
+        display: none; /* Hide the hamburger menu */
+    }
+}
+
+/* Add a custom property for logo size */
+:root {
+    --logo-size: 15%; /* Initial size, adjust as needed */
+    --logo-left-distance: 45px; /* Adjust as needed */
+    --hamburger-right-distance: 45px; /* Adjust as needed */
+}
+
+/* Add custom properties for hamburger style */
+:root {
+    --hamburger-bar-length: 2px; /* Initial bar length, adjust as needed */
+    --hamburger-bar-width: 38px; /* Initial bar width, adjust as needed */
+    --hamburger-bar-spacing: 10px; /* Initial space between bars, adjust as needed */
+    --logo-size: 15%; /* Initial size, adjust as needed */
+    --logo-left-distance: 45px; /* Adjust as needed */
+    --hamburger-right-distance: 45px; /* Adjust as needed */
+}
+
+/* Adjustments for width <= 850px */
+@media (max-width: 850px) {
+    /* Styles for width <= 850px */
+    #welcome-section {
+        padding-top: calc((100vw / 1.35)); /* Maintain 1.35:1 aspect ratio */
+        margin-top: 0; /* Set margin-top to 0 to remove unnecessary gap */
+    }
+
+    /* Move the logo to the left within this media query */
+    .logo {
+        left: var(--logo-left-distance);
+        transform: translateX(0%); /* Reset the transform */
+        margin-right: 0; /* Remove right margin */
+        height: calc(var(--logo-size) * 1.618); /* Maintain 1.618 aspect ratio */
+    }
+
+    /* Adjust other styles as needed for smaller screens */
+    #desktop-nav {
+        justify-content: space-between; /* Maintain space-between for elements */
+        padding-left: var(--logo-left-distance);
+        padding-right: var(--hamburger-right-distance);
+        height: 15.6vh; /* 11.55vh * 1.25 */
+    }
+
+    .hamburger-icon {
+        display: block; /* Show the hamburger menu */
+        --bar-length: var(--hamburger-bar-length);
+        --bar-width: var(--hamburger-bar-width);
+        --bar-spacing: var(--hamburger-bar-spacing);
+    }
+
+    .bar {
+        width: var(--bar-width);
+        height: var(--bar-length);
+        background-color: black;
+        margin: var(--bar-spacing) 0;
+    }
+
+    #desktop-nav .nav-links li a,
+    #desktop-nav a[href^="https://www.linkedin.com"],
+    #desktop-nav .contact-button {
+        display: none; /* Hide other navbar elements */
+    }
+
+    /* Additional styles for the video in smaller screens */
+    #welcome-video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 75%; /* Set the width to 75% for better responsiveness */
+        height: auto; /* Maintain aspect ratio */
+        z-index: 1; /* Maintain the z-index for proper layering */
+    }
+
+
+    #play-button {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.7);
+        border-radius: 5px;
+        display: none; /* Hide the play button initially */
+        z-index: 2; /* Ensure the play button is above the video */
+    }
+}
