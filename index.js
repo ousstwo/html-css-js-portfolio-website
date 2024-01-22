@@ -1,10 +1,3 @@
-function toggleMenu() {
-    const menu = document.querySelector(".menu-links");
-    const icon = document.querySelector(".hamburger-icon");
-    menu.classList.toggle("open");
-    icon.classList.toggle("open");
-}
-
 // Get all navigation links
 const navLinks = document.querySelectorAll('.nav-links li a');
 
@@ -19,9 +12,6 @@ navLinks.forEach(link => {
 });
 
 // Get the contact button element
-const contactButton = document.querySelector('.contact-button');
-
-// Assuming you have a reference to the contact button element
 const contactButton = document.querySelector('.contact-button');
 
 // Add a click event listener to the contact button
