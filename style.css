@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Montserrat:wght@400;600;700&display=swap');
 
 * {
     margin: 0;
@@ -7,284 +7,118 @@
 }
 
 @font-face {
-    font-family: 'Rocgrotesk medium';
-    src: url('assets/fonts/rocgrotesk-medium-webfont.woff') format('woff'),
-         url('assets/fonts/rocgrotesk-medium-webfont.woff2') format('woff2');
+    font-family: 'Right Grotesk Compact';
+    src: url('assets/fonts/rightgrotesk-compactblack-webfont.woff') format('woff'),
+         url('assets/fonts/rightgrotesk-compactblack-webfont.woff2') format('woff2');
+    font-display: swap;
 }
 
-@font-face {
-    font-family: 'Rocgrotesk regular';
-    src: url('assets/fonts/rocgrotesk-regular-webfont.woff') format('woff'),
-         url('assets/fonts/rocgrotesk-regular-webfont.woff2') format('woff2');
+#main-content {
+    transform: translateY(100vh); /* Start off-screen */
+    transition: transform 1s ease-in-out;
 }
 
-@font-face {
-    font-family: 'Rocgrotesk light';
-    src: url('assets/fonts/rocgrotesk-light-webfont.woff') format('woff'),
-         url('assets/fonts/rocgrotesk-light-webfont.woff2') format('woff2');
+:root {
+    --base-font-size: 3rem; /* Default size, you can change this value */
 }
 
-@font-face {
-    font-family: 'Rocgrotesk thin';
-    src: url('assets/fonts/rocgrotesk-thin-webfont.woff') format('woff'),
-         url('assets/fonts/rocgrotesk-thin-webfont.woff2') format('woff2');
+html {
+    font-size: var(--base-font-size);
 }
+
 
 body, html {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-    font-family: 'Rocgrotesk medium', sans-serif;
+    font-family: 'Right Grotesk Compact', sans-serif;
     scroll-behavior: smooth;
     display: flex;
     flex-direction: column;
 }
 
-#desktop-nav {
-    box-sizing: border-box;
+#skills-container {
     position: fixed;
     top: 0;
     left: 0;
-    height: 11.55vh;
-    width: 100%;
-    z-index: 1000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 30px;
-    box-shadow: 0 12px 15px rgba(212, 212, 212, 1);
-}
-
-#desktop-nav a {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-}
-
-#desktop-nav a[href="https://www.linkedin.com/in/oussama-tounssi/"] img {
-    width: 15px;
-    height: auto;
-    margin-left: 10px;
-    order: 2;
-}
-
-.logo {
-    display: flex;
-    align-items: flex-start;
-    cursor: pointer;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    margin-right: 10px;
-    height: 38.19%;
-}
-
-.logo img {
-    height: 100%;
-    max-width: 100%;
-    object-fit: contain;
-}
-
-#linkedin-logo {
-    width: 16px;
-    height: auto;
-    margin-right: 10px;
-}
-
-.nav-links li {
-    margin: 0;
-    padding: 0 4px;
-}
-
-.nav-links {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    gap: 2rem;
-    align-items: center;
-}
-
-.nav-links li a {
-    text-decoration: none;
-    color: black;
-    font-size: 1.1rem;
-    border-bottom: 2px solid transparent;
-}
-
-.nav-links li a.active {
-    color: black;
-    border-bottom: 1px solid black;
-    padding-bottom: 3px;
-}
-
-.contact-button {
-    width: 190px;
-    height: 54px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: rgb(0, 0, 0);
-    color: white !important; /* Keep the text color white */
-    text-decoration: none; /* Remove underline, if any */
-    cursor: pointer;
-    border-radius: 100px;
-    transition: background-color 0.1s ease-in-out;
-    text-align: center;
-    cursor: pointer;
-    user-select: none;
-    margin-right: 10px;
-    order: 1;
-}
-
-.contact-button:hover {
-    background-color: rgb(51, 51, 51);
-}
-
-.contact-container {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-}
-
-.contact-button a {
-    color: white !important;
-    text-decoration: none; /* Remove underline, if any */
-}
-
-#scrolling-text-container {
-    white-space: nowrap;
-    overflow: hidden;
-    position: absolute;
-    top: 50%;
-    left: 0;
     right: 0;
-    transform: translateY(-50%);
-}
-
-#repeating-text {
-    display: inline-block;
-    animation: scroll-text 4000s linear infinite;
-    font-size: 6vw;
-    white-space: nowrap;
-    font-family: 'Rocgrotesk light', sans-serif;
-}
-
-.word {
-    margin-right: 0px;
-}
-
-.separator {
-    margin-left: 60px;
-    margin-right: 60px;
-}
-
-@keyframes scroll-text {
-    0% { transform: translateX(0%); }
-    100% { transform: translateX(-100%); }
-}
-
-#desktop-nav {
-    position: relative;
-    z-index: 2;
-}
-
-#welcome-section::before,
-#welcome-section::after {
-    content: '';
-    display: block;
-    padding-top: 56.25%;
-}
-
-#welcome-section {
-    position: relative;
-    width: 100%;
-    max-height: 56.25vw;
-    height: 100vh;
-    top: 0;
-    margin-top: calc(11.55vh * -1);
+    bottom: 0;
     display: flex;
-    justify-content: center;
     align-items: center;
-    overflow: hidden;
+    justify-content: center;
+    flex-direction: column;
 }
 
-#footer-section {
-    width: 100%;
-    background-color: black;
-    color: white;
-    padding: 20px;
-    text-align: center;
+.overlay-text {
+    display: block; /* ensure it's always showing */
+    line-height: 0.6; /* Reducing the line-height may decrease the space */
+    margin-bottom: 0;
 }
 
-.footer-content {
+.skill {
+    display: flex;
+    align-items: center;
+    position: relative; /* Needed for absolute positioning of pseudo-element and SVG */
+    padding-left: 0.85rem; /* Provide space for the box and SVG */
 }
 
-.hamburger-icon {
-    display: none;
-    cursor: pointer;
-}
-
-.bar {
-    width: 25px;
-    height: 3px;
-    background-color: black;
-    margin: 6px 0;
-}
-
-#welcome-video,
-#thumbnail-container,
-#video-container {
+.skill::before {
+    content: '';
     position: absolute;
+    left: 0;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-#welcome-video {
-    width: 50%;
-    height: auto;
-    object-fit: contain;
+    transform: translateY(-50%);
+    width: 0.7rem; /* Width of the box */
+    height: 0.7rem; /* Height of the box */
+    background-color: #000000; /* Color of the box */
+    border-radius: 20%; /* Rounded corners */
     z-index: 1;
 }
 
-#play-button {
+.skill-icon {
     position: absolute;
+    left: 0; /* Align with the box */
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.7);
-    border-radius: 5px;
-    display: none;
+    transform: translateY(-50%);
+    z-index: 2; /* Above the ::before pseudo-element */
+    width: 0.7rem; /* Match the width of the box */
+    height: 0.7rem; /* Match the height of the box */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-#thumbnail-container {
-    width: 53%; /* Increased by 25% */
-    height: 53%; /* Increased by 25% */
-    object-fit: contain;
-    z-index: 2;
-    transform: translate(-50%, -50%);
+.skill-icon img {
+    width: 0.5rem; /* Set the width as needed */
+    height: auto; /* This will maintain the aspect ratio */
 }
 
-#video-thumbnail {
-    width: 100%;
-    height: 100%;
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
+.skill, .overlay-text {
+    opacity: 1; /* Ensure elements are fully visible initially */
 }
 
-#video-container {
-    width: 100%;
+#full-screen-overlay {
+    position: fixed; /* or absolute */
+    top: 0;
+    left: 0;
+    width: 100vw;
     height: 100vh;
-    display: none;
-    overflow: hidden;
-    background-color: rgba(255, 255, 255, 0); /* Transparent background */
-    box-shadow: 0 12px 15px rgba(212, 212, 212, 1);
-    z-index: 1;
+    background-color: white; /* white card */
+    z-index: 10; /* Ensure it's above the main content */
+
+    /* Add a drop shadow */
+    box-shadow: 0 20px 105px rgb(197, 197, 197, 0.5);
+
+    /* Add any additional styling for your skills and text here */
 }
+
+
+#main-content {
+    /* Ensure there's enough top margin or padding to account for the overlay */
+    margin-top: 100vh;
+}
+
+
+
+
+ /* * { border: 1px solid red !important;}  

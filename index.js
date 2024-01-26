@@ -1,89 +1,57 @@
-// Get all navigation links
-const navLinks = document.querySelectorAll('.nav-links li a');
-
-// Add click event listeners to each link
-navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        // Remove the "active" class from all links
-        navLinks.forEach(link => link.classList.remove('active'));
-        // Add the "active" class to the clicked link
-        link.classList.add('active');
-    });
-});
-
-// Get the contact button element
-const contactButton = document.querySelector('.contact-button');
-
-// Add a click event listener to the contact button
-contactButton.addEventListener('click', () => {
-    // Redirect to the mailto link when the button is clicked
-    window.location.href = 'mailto:tounssi.mograph@gmail.com';
-});
-
 document.addEventListener('DOMContentLoaded', () => {
-    const repeatingTextElement = document.getElementById('repeating-text');
-    let text = '';
+    const skills = document.querySelectorAll('.skill');
+    let currentSkill = 0;
+    const flashInterval = 250;
+    const screenHeightHalf = window.innerHeight / 2;
 
-    // Significantly increase repetitions for a longer text string
-    for (let i = 0; i < 500; i++) {
-        text += '<span class="word">PASSION</span><span class="separator">•</span>';
+    // Apply will-change for better performance
+    skills.forEach(skill => {
+        skill.style.willChange = 'transform, opacity';
+    });
+
+    // Function to flash skills one by one
+    function flashSkill() {
+        skills.forEach((skill, index) => {
+            skill.style.display = index === currentSkill ? 'block' : 'none';
+        });
+
+        currentSkill++;
+        if (currentSkill < skills.length) {
+            setTimeout(flashSkill, flashInterval);
+        }
     }
 
-    repeatingTextElement.innerHTML = text; // Use innerHTML instead of textContent
+    flashSkill();
+
+    // After your flashing sequence ends
+    setTimeout(() => {
+        const timeline = gsap.timeline();
+
+        // Animate y movement and autoAlpha simultaneously
+        timeline.to(".skill, .overlay-text", {
+            duration: 1.1, // Duration for y movement
+            y: screenHeightHalf * 1.15,
+            ease: "power3.inOut" // Easing for y movement
+        })
+        .to(".skill, .overlay-text", {
+            duration: 0.6, // Duration for autoAlpha
+            autoAlpha: 0, // Handles both opacity and visibility
+            ease: "power4.in" // Easing for autoAlpha
+        }, 0); // Start at the same time as the first animation
+        // Example using GSAP for animation
+         gsap.to("#full-screen-overlay", {
+            duration: 1.35, // duration of the animation in seconds
+            top: "100%", // animate to slide down out of view
+            ease: "power2.inOut", // easing function for a smooth effect
+            onComplete: function() {
+            document.getElementById("full-screen-overlay").style.display = 'none';
+         }
 });
 
-function adjustFooterHeight() {
-    const welcomeSection = document.getElementById('welcome-section');
-    const footer = document.getElementById('footer-section');
+// You can trigger this animation based on an event or after a delay
 
-    // Calculate the remaining height for the footer
-    const remainingHeight = window.innerHeight - welcomeSection.offsetHeight;
+          
 
-    // Set the footer height to fill the remaining space, or to a minimum value
-    footer.style.height = `${remainingHeight}px`;
-}
-
-// Adjust the footer height on load and when the window is resized
-window.addEventListener('load', adjustFooterHeight);
-window.addEventListener('resize', adjustFooterHeight);
-
-// Creating a new MutationObserver instance
-var observer = new MutationObserver(() => {
-    // Your mutation handling logic goes here
-    // For now, it's an empty function
+    }, skills.length * flashInterval - flashInterval / 1.25);
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-    const thumbnailContainer = document.getElementById('thumbnail-container');
-    const videoContainer = document.getElementById('video-container');
-    const videoElement = document.getElementById('welcome-video');
-    const playButton = document.getElementById('play-button');
-
-    thumbnailContainer.addEventListener('click', () => {
-        // Hide the thumbnail and show the video
-        thumbnailContainer.style.display = 'none';
-        videoContainer.style.display = 'block';
-
-        // Autoplay the video when the thumbnail is clicked
-        videoElement.play();
-    });
-
-    // Show play button when video is paused
-    videoElement.addEventListener('pause', () => {
-        playButton.style.display = 'block';
-    });
-
-    // Hide play button when video is playing
-    videoElement.addEventListener('play', () => {
-        playButton.style.display = 'none';
-    });
-
-    // Play/pause video when play button is clicked
-    playButton.addEventListener('click', () => {
-        if (videoElement.paused) {
-            videoElement.play();
-        } else {
-            videoElement.pause();
-        }
-    });
-});
