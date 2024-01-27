@@ -109,7 +109,6 @@ body, html {
 .container a,
 .container i {
     font-family: 'PP neue montreal book', sans-serif;
-    /* Specify the custom font as the primary font-family, with fallback options */
 }
 
 /* Ensure that child elements do not overflow */
@@ -124,7 +123,7 @@ body, html {
 width: 81.5%;
 height: 1px;
 background-color: #000; /* Change to your desired underline color */
-margin-left: 3.4%; /* Add left margin to position the underline */
+margin-left: 3.42%; /* Add left margin to position the underline */
 }
 
 /* Add this style for the container div */
@@ -134,6 +133,51 @@ margin-left: 3.4%; /* Add left margin to position the underline */
     padding-right: 1.05%; /* Add right padding */
     box-sizing: border-box; /* Include padding in the width */
 }
+
+/* Example CSS, adjust as needed */
+.container {
+    padding-left: 3.42%;
+    padding-right: 1.26%;
+}
+
+.navbar {
+    height: 6.1vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-nav {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-nav li {
+    margin-right: 20px; /* Adjust as needed */
+}
+
+.navbar-nav li a,
+.navbar-contact a {
+    font-size: 0.45rem;
+    /* Add any other styles for your links here */
+}
+
+.skill {
+    /* Styles for skill blocks */
+}
+
+.skill-icon img {
+    /* Styles for skill icons */
+}
+
+/* More styles as per your layout and design */
 
 
 
