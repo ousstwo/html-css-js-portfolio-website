@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="mediaqueries.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="preload" href="assets/fonts/rocgrotesk-compactblack-webfont.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/rightgrotesk-compactblack-webfont.woff2" as="font" type="font/woff2" crossorigin>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script type="module" src="index.js" defer></script>
 </head>
@@ -62,26 +62,31 @@
     </div>
     <div id="main-content">
 <!-- Navbar starts here -->
-<div class="container mx-auto px-6" style="height: 6.31vh; border-bottom: 1px solid;">
+<div class="container" style="height: 6.31vh;">
     <div class="flex justify-between items-center h-full">
         <div class="flex items-center">
-            <img src="https://placehold.co/100x30" alt="Company logo with orange and white colors, resembling a sun icon next to the text Spring/Summer" class="mr-10">
+            <img src="https://placehold.co/100x30" class="mr-10">
             <nav>
-                <ul class="flex space-x-6 text-xs">
-                    <li><a href="#" class="text-black hover:text-orange-500">PASSION</a></li>
-                    <li><a href="#" class="text-black hover:text-orange-500">NOXO</a></li>
-                    <li><a href="#" class="text-black hover:text-orange-500">PASSION</a></li>
-                    <li><a href="#" class="text-black hover:text-orange-500">NOXO</a></li>                </ul>
+                <ul class="flex space-x-8 text-xs">
+                    <li><a href="#" class="text-black hover:text-orange-500" style="font-size: 0.4rem;">Demo Reel</a></li>
+                    <li><a href="#" class="text-black hover:text-orange-500" style="font-size: 0.4rem;">Work</a></li>
+                    <li><a href="#" class="text-black hover:text-orange-500" style="font-size: 0.4rem;">About</a></li>
+                </ul>
             </nav>
         </div>
         <div class="flex items-center">
-            <div class="text-black mr-10">
-                <i class="far fa-clock mr-2"></i>CONTACT NOXO
+            <div class="text-black mr-10 text-xs">
+                <i class="far fa-clock mr-2"></i><a href="#" style="font-size: 0.4rem;">Contact</a>
             </div>
+            
         </div>
     </div>
+    <!-- Add the navbar underline element here -->
 </div>
+<div class="navbar-underline"></div>
 <!-- Navbar ends here -->
+
+
 
         <!-- All your main website content goes here -->
     </div>
