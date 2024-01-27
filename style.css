@@ -197,15 +197,42 @@ background-color: #000; /* Change to your desired underline color */
 }
 
 #right-widget {
+    font-family: 'PP neue montreal book', sans-serif;
+    font-size: 0.35rem;
+    box-sizing: border-box;
     width: 15vw;
     height: 20vh; /* Adjust the height as needed */
     position: fixed;
     right: 0px;
     top: 6.1vh;
-    background-color: #f0f0f0; /* Adjust background color as needed */
+    border-radius: 15px; /* Adjust for desired roundness */
+    background-color: #ffffff; /* Adjust background color as needed */
     /* Add any other styling as necessary */
 }
 
+.rounded-rectangle {
+    margin-left: 10px;
+    margin-right: 20px;
+    border: 1px solid #000; /* Change as needed */
+    height: auto;
+    border-radius: 15px; /* Adjust for desired roundness */
+    padding: 10px;
+    text-align: center;
+}
+
+
+.rounded-square {
+    display: inline-block;
+    border: 1px solid #000; /* Change as needed */
+    border-radius: 10px; /* Adjust for desired roundness */
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.rounded-square a {
+    text-decoration: none;
+    color: #000; /* Change as needed */
+}
 
 
 /* Existing styles in mediaqueries.css remain unchanged */

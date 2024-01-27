@@ -2,11 +2,11 @@
 @media (min-width: 1432px) {   
     .container {
         /* Calculate the remaining viewport width for .container by subtracting #right-widget's width */
-        width: calc(100vw - (19.55vw - (19.55 - 15) * ((100vw - 1432px) / (1920 - 1432))));
+        width: calc(100vw - (19vw - (19.55 - 15) * ((100vw - 1432px) / (1920 - 1432))));
     }
 
     #right-widget {
-        width: calc(19.55vw - (19.55 - 15) * ((100vw - 1432px) / (1920 - 1432)));
+        width: calc(19vw - (19.55 - 15) * ((100vw - 1432px) / (1920 - 1432)));
     }
 }
 
