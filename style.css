@@ -13,11 +13,6 @@
     font-display: swap;
 }
 
-#main-content {
-    transform: translateY(100vh); /* Start off-screen */
-    transition: transform 1s ease-in-out;
-}
-
 :root {
     --base-font-size: 3rem; /* Default size, you can change this value */
 }
@@ -25,7 +20,6 @@
 html {
     font-size: var(--base-font-size);
 }
-
 
 body, html {
     margin: 0;
@@ -105,17 +99,7 @@ body, html {
     height: 100vh;
     background-color: white; /* white card */
     z-index: 10; /* Ensure it's above the main content */
-
-    /* Add a drop shadow */
     box-shadow: 0 20px 105px rgb(197, 197, 197, 0.5);
-
-    /* Add any additional styling for your skills and text here */
-}
-
-
-#main-content {
-    /* Ensure there's enough top margin or padding to account for the overlay */
-    margin-top: 100vh;
 }
 
 

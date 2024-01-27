@@ -55,3 +55,4 @@ document.addEventListener('DOMContentLoaded', () => {
     }, skills.length * flashInterval - flashInterval / 1.25);
 });
 
+
