@@ -119,17 +119,16 @@ body, html {
 
 /* Add this style for the navbar underline */
 .navbar-underline {
-width: 81.5%;
+width: 100%);
 height: 1px;
 background-color: #000; /* Change to your desired underline color */
-margin-left: 3.42%; /* Add left margin to position the underline */
 }
 
 /* Add this style for the container div */
 .container {
-    width: 100%; /* Set width to 100% */
-    padding-left: 3.42%; /* Add left padding */
-    padding-right: 1.26%; /* Add right padding */
+    /* background-color: greenyellow; */
+    width: 85vw; /* Set width to 100% */
+    padding-left: 3.42vw; /* Add left padding */
     box-sizing: border-box; /* Include padding in the width */
 }
 
@@ -171,6 +170,10 @@ margin-left: 3.42%; /* Add left margin to position the underline */
     margin-right: 1rem; /* space between reel work about  */
 }
 
+.contact{
+    padding-right: 1.046%; /* Add right padding */
+}
+
 .reel-work-about li a,
 .contact a {
     text-decoration: none;
@@ -189,8 +192,20 @@ margin-left: 3.42%; /* Add left margin to position the underline */
     /* Styles for skill icons */
 }
 
-/* More styles as per your layout and design */
+#right-widget {
+    width: 15vw;
+    height: 20vh; /* Adjust the height as needed */
+    position: fixed;
+    right: 0px;
+    top: 6.1vh;
+    background-color: #f0f0f0; /* Adjust background color as needed */
+    /* Add any other styling as necessary */
+}
 
 
 
-/*  * { border: 1px solid red !important;}  
+/* Existing styles in mediaqueries.css remain unchanged */
+
+
+/* Debugging border, remove or comment out for production */
+/* * { border: 1px solid red !important; } */

@@ -1,6 +1,30 @@
+/* For viewports wider than 1432px */
+@media (min-width: 1432px) {   
+    .container {
+        /* Calculate the remaining viewport width for .container by subtracting #right-widget's width */
+        width: calc(100vw - (19.55vw - (19.55 - 15) * ((100vw - 1432px) / (1920 - 1432))));
+    }
+
+    #right-widget {
+        width: calc(19.55vw - (19.55 - 15) * ((100vw - 1432px) / (1920 - 1432)));
+    }
+}
+
+/* For viewports between 1432px and 992px */
+@media (min-width: 992px) and (max-width: 1431px) {
+    .container {
+        /* Calculate the remaining viewport width for .container by subtracting #right-widget's fixed width */
+        width: calc(100vw - 280px);
+    }
+
+    #right-widget {
+        width: 280px;
+    }
+}
+
 @media (max-width: 992px) {
     .navbar {
-        height: 5.7vh;
+        height: 6.1vh;
     }
 
     .navbar-brand {
@@ -31,9 +55,7 @@
     .navbar-underline {
         width: auto;
         height: 1px;
-        background-color: #000; /* Change to your desired underline color */
-        margin-left: 20px; /* Add left margin to position the underline */
-        margin-right: 20px;    
+        background-color: #000; /* Change to your desired underline color */ 
     }
 
 
@@ -42,6 +64,10 @@
         padding-left: 20px; /* Add left padding */
         padding-right: 20px; /* Add right padding */
         box-sizing: border-box; /* Include padding in the width */
+    }
+
+    #right-widget {
+        display: none;
     }
 
     /* Add any other specific mobile styles for navbar components here */
