@@ -111,7 +111,6 @@ body, html {
     font-family: 'PP neue montreal book', sans-serif;
 }
 
-/* Ensure that child elements do not overflow */
 .container > * {
     max-width: 100%; /* Ensure children do not cause overflow */
     overflow-x: hidden; /* Hide horizontal overflow */
@@ -129,15 +128,9 @@ margin-left: 3.42%; /* Add left margin to position the underline */
 /* Add this style for the container div */
 .container {
     width: 100%; /* Set width to 100% */
-    padding-left: 3.4%; /* Add left padding */
-    padding-right: 1.05%; /* Add right padding */
+    padding-left: 3.42%; /* Add left padding */
+    padding-right: 1.26%; /* Add right padding */
     box-sizing: border-box; /* Include padding in the width */
-}
-
-/* Example CSS, adjust as needed */
-.container {
-    padding-left: 3.42%;
-    padding-right: 1.26%;
 }
 
 .navbar {
@@ -152,20 +145,39 @@ margin-left: 3.42%; /* Add left margin to position the underline */
     align-items: center;
 }
 
-.navbar-nav {
+.logo-ouss-two {
+    display: flex;
+    align-items: center;
+
+    padding-right: 2.25rem;
+}
+
+.ouss-two {
+    font-size: large;
+    padding-left: 0.25rem;
+}
+
+.reel-work-about {
     list-style: none;
     display: flex;
     margin: 0;
-    padding: 0;
 }
 
-.navbar-nav li {
-    margin-right: 20px; /* Adjust as needed */
+.navbar-menu-button {
+    display: none;
 }
 
-.navbar-nav li a,
-.navbar-contact a {
-    font-size: 0.45rem;
+.reel-work-about li {
+    margin-right: 1rem; /* space between reel work about  */
+}
+
+.reel-work-about li a,
+.contact a {
+    text-decoration: none;
+    color: black;
+    font-size: 0.35rem;
+    align-items: center;
+    display: flex;
     /* Add any other styles for your links here */
 }
 
