@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+.skill, .overlay-text {
+    visibility: hidden;
+}
+
 @font-face {
     font-family: 'Right Grotesk Compact';
     src: url('assets/fonts/rightgrotesk-compactblack-webfont.woff') format('woff'),
