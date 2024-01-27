@@ -10,7 +10,6 @@
     font-family: 'Right Grotesk Compact';
     src: url('assets/fonts/rightgrotesk-compactblack-webfont.woff') format('woff'),
          url('assets/fonts/rightgrotesk-compactblack-webfont.woff2') format('woff2');
-    font-display: swap;
 }
 
 :root {
