@@ -1,12 +1,13 @@
 /* For viewports wider than 1432px */
 @media (min-width: 1432px) {   
+    
     .container {
-        /* Calculate the remaining viewport width for .container by subtracting #right-widget's width */
-        width: calc(100vw - (19vw - (19.55 - 15) * ((100vw - 1432px) / (1920 - 1432))));
+        /* Calculate the remaining viewport width for .container by subtracting #right-widget's fixed width */
+        width: calc(100vw - 280px);
     }
 
     #right-widget {
-        width: calc(19vw - (19.55 - 15) * ((100vw - 1432px) / (1920 - 1432)));
+        width: 280px;
     }
 }
 

@@ -9,64 +9,75 @@
     <link rel="preload" href="assets/fonts/rightgrotesk-compactblack-webfont.woff2" as="font" type="font/woff2" crossorigin>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script type="module" src="index.js" defer></script>
-</head>
-<body>
-    <div id="full-screen-overlay">
-        <div id="skills-container">
-            <div class="overlay-text">ALL THINGS</div>
-
-            <!-- Repeat the following block for each skill -->
-            <div class="skill" id="skill-design">
-                <div class="skill-icon">
-                    <img src="assets/design.svg" alt="Design Icon">
+    <!-- Add this inside your <body> tag, preferably at the top or within your header structure -->
+        <div id="full-screen-overlay">
+            <div id="skills-container">
+                <div class="overlay-text">ALL THINGS</div>
+    
+                <!-- Repeat the following block for each skill -->
+                <div class="skill" id="skill-design">
+                    <div class="skill-icon">
+                        <img src="assets/design.svg" alt="Design Icon">
+                    </div>
+                    DESIGN
                 </div>
-                DESIGN
+            
+            <div class="skill" id="skill-animation">
+                <div class="skill-icon">
+                    <img src="assets/animation.svg" alt="Animation Icon">
+                </div>
+                ANIMATION
             </div>
-        
-        <div class="skill" id="skill-animation">
-            <div class="skill-icon">
-                <img src="assets/animation.svg" alt="Animation Icon">
+    
+            <div class="skill" id="skill-3d">
+                <div class="skill-icon">
+                    <img src="assets/3d.svg" alt="3D Icon">
+                </div>
+                3D
             </div>
-            ANIMATION
-        </div>
-
-        <div class="skill" id="skill-3d">
-            <div class="skill-icon">
-                <img src="assets/3d.svg" alt="3D Icon">
+    
+            <div class="skill" id="skill-editing">
+                <div class="skill-icon">
+                    <img src="assets/editing.svg" alt="Editing Icon">
+                </div>
+                EDITING
             </div>
-            3D
-        </div>
-
-        <div class="skill" id="skill-editing">
-            <div class="skill-icon">
-                <img src="assets/editing.svg" alt="Editing Icon">
+    
+            <div class="skill" id="skill-ux">
+                <div class="skill-icon">
+                    <img src="assets/ux.svg" alt="UX Icon">
+                </div>
+                UX
             </div>
-            EDITING
-        </div>
-
-        <div class="skill" id="skill-ux">
-            <div class="skill-icon">
-                <img src="assets/ux.svg" alt="UX Icon">
+    
+            <div class="skill" id="skill-sound-design">
+                <div class="skill-icon">
+                    <img src="assets/sound.svg" alt="Sound Design Icon">
+                </div>
+                SOUND DESIGN
             </div>
-            UX
-        </div>
-
-        <div class="skill" id="skill-sound-design">
-            <div class="skill-icon">
-                <img src="assets/sound.svg" alt="Sound Design Icon">
-            </div>
-            SOUND DESIGN
         </div>
     </div>
-</div>
-<div id="main-content">
+</head>
+<body>
+    <div id="right-widget"> 
+        <div class="rounded-rectangle">
+            <p>Considering working with me?</p>
+            <div class="content">
+                <div class="rounded-square"></div>
+                <p class="start-text">Get started</p>
+            </div>
+        </div>        
+    </div>    
+    <div id="main-content">
     <!-- Navbar starts here -->
     <div class="container">
         <div class="navbar">
             <div class="navbar-brand">
                 <div class="logo-ouss-two">
-                    <div class="logo"> <img src="https://placehold.co/100x30"> </div>
-                    <div class="ouss-two"> <span>Ouss Two</span> </div>
+                    <div class="logo"> <img src="assets/logo-fixed.svg" alt="Website logo" width="30" height="30">
+                    </div>
+                    <div class="ouss-two"> <span>Oussama Tounssi</span> </div>
                 </div>
                 <nav>
                     <ul class="reel-work-about">
@@ -76,23 +87,11 @@
                     </ul>
                 </nav>
             </div>
-            <div class="contact">
-                <a href="#">Contact</a>
-            </div>
             <div class="navbar-menu-button" onclick="toggleMenu()">Menu</div>
         </div>
         <div class="navbar-underline"></div>
     </div>
-    <!-- Navbar ends here -->
-</div>
-<div id="right-widget">
-    <!-- Widget content goes here -->
-    <div class="rounded-rectangle">
-        <p>Considering working with me?</p>
-        <div class="rounded-square">
-            <a href="contact.html">Let's get started</a>
-        </div>
-    </div>
-</div>
+    <!-- Navbar ends here --> 
+
 </body>
 </html>
