@@ -3,11 +3,11 @@
     
     .container {
         /* Calculate the remaining viewport width for .container by subtracting #right-widget's fixed width */
-        width: calc(100vw - 280px);
+        width: calc(100vw - 320px);
     }
 
     #right-widget {
-        width: 280px;
+        width: 320px;
     }
 }
 
@@ -15,11 +15,11 @@
 @media (min-width: 992px) and (max-width: 1431px) {
     .container {
         /* Calculate the remaining viewport width for .container by subtracting #right-widget's fixed width */
-        width: calc(100vw - 280px);
+        width: calc(100vw - 320px);
     }
 
     #right-widget {
-        width: 280px;
+        width: 320px;
     }
 }
 

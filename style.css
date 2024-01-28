@@ -20,10 +20,16 @@
          url('assets/fonts/pp_neue_montreal_book-webfont.woff2') format('woff2');
 }
 
+@font-face {
+    font-family: 'Easy grotesk';
+    src: url('assets/fonts/easy-grotesk-regular.woff') format('woff'),
+         url('assets/fonts/easy-grotesk-regular.woff2') format('woff2');
+}
+
 :root {
     --base-font-size: 3rem; /* Default size, you can change this value */
-    --color: #0006FF;
-    --color-bg: #F7F7FF;
+    --color: #F62F63;
+    --color-bg: #FFFFFF;
 }
 
 html {
@@ -118,7 +124,7 @@ body, html {
 .container,
 .container a,
 .container i {
-    font-family: 'PP neue montreal book', sans-serif;
+    font-family: 'Easy grotesk', sans-serif;
 }
 
 .container > * {
@@ -162,7 +168,7 @@ background-color: var(--color);; /* CXhange to your desired underline color */
 }
 
 .ouss-two {
-    font-size: large;
+    font-size: 0.35rem;
     padding-left: 0.25rem;
 }
 
@@ -200,7 +206,7 @@ background-color: var(--color);; /* CXhange to your desired underline color */
 }
 
 #right-widget {
-    font-family: 'PP neue montreal book', sans-serif;
+    font-family: 'Easy grotesk', sans-serif;
     font-size: 0.35rem;
     box-sizing: border-box;
     width: 15vw;
