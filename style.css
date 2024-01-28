@@ -173,6 +173,7 @@ background-color: var(--color);; /* CXhange to your desired underline color */
 }
 
 .navbar-menu-button {
+    color: var(--color);
     display: none;
 }
 
