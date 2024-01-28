@@ -221,7 +221,6 @@ background-color: var(--color-muted); /* CXhange to your desired underline color
     font-family: 'Easy grotesk', sans-serif;
     font-size: 0.35rem;
     box-sizing: border-box;
-    width: 15vw;
     height: 20vh; /* Adjust the height as needed */
     position: fixed;
     right: 0px;
