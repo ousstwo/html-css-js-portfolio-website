@@ -29,8 +29,20 @@
 :root {
     --base-font-size: 3rem; /* Default size, you can change this value */
     --color: #F62F63;
-    --color-bg: #FFFFFF;
+    --color-muted: #F6B8C9;
+    --color-bg: #FDFAFF;
 }
+
+::selection {
+    background: var(--color); /* replace #yourColor with your chosen color code */
+    color: var(--color-bg); /* Optional: This will change the text color during selection */
+  }
+  
+  /* For Mozilla Firefox */
+  ::-moz-selection {
+    background: var(--color); /* replace #yourColor with your chosen color code */
+    color: var(--color-bg); /* Optional: This will change the text color during selection */
+  }
 
 html {
     font-size: var(--base-font-size);
@@ -40,6 +52,7 @@ body, html {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+    overflow-y: auto; /* Only show the vertical scrollbar when needed */
     font-family: 'Right Grotesk Compact', sans-serif;
     scroll-behavior: smooth;
     display: flex;
@@ -137,13 +150,12 @@ body, html {
 .navbar-underline {
 width: 100%);
 height: 1px;
-background-color: var(--color);; /* CXhange to your desired underline color */
+background-color: var(--color-muted); /* CXhange to your desired underline color */
 }
 
 /* Add this style for the container div */
 .container {
     /* background-color: greenyellow; */
-    width: 85vw; /* Set width to 100% */
     padding-left: 3.42vw; /* Add left padding */
     box-sizing: border-box; /* Include padding in the width */
 }
@@ -223,7 +235,7 @@ background-color: var(--color);; /* CXhange to your desired underline color */
     margin-left: 10px;
     margin-right: 28px;
     color: var(--color);;
-    border: 1px solid var(--color);; /* Change as needed */
+    border: 1px solid var(--color-muted);; /* Change as needed */
     height: 13.92vh;
     border-radius: 8px; /* Adjust for desired roundness */
     padding: 15px;
@@ -277,6 +289,47 @@ background-color: var(--color);; /* CXhange to your desired underline color */
     margin-left: 10px; /* Adjust as needed for spacing */
     font-size: 0.325rem;
 }
+
+.paragraph {
+
+}
+
+.paragraph > * {
+    max-width: 100%; /* Ensure children do not cause overflow */
+    overflow-x: hidden; /* Hide horizontal overflow */
+    box-sizing: border-box; /* Include padding and borders in width */
+}
+
+.o2-paragraph > * {
+    max-width: 100%; /* Ensure children do not cause overflow */
+    overflow-x: hidden; /* Hide horizontal overflow */
+    box-sizing: border-box; /* Include padding and borders in width */
+}
+
+.paragraph , .o2-paragraph{
+    /* background-color: greenyellow; */
+    color: var(--color);
+    padding-left: 3.42vw;
+    padding-top: 5.5vh;
+    box-sizing: border-box; /* Include padding in the width */
+}
+
+.paragraph {
+font-family: "Easy grotesk", sans-serif;
+font-size: 1.25rem; /* *1.12 */
+line-height: 1.4rem;
+}
+
+.o2-paragraph {
+    font-family: "Right Grotesk Compact", sans-serif;
+    font-size: 12.5rem; 
+    line-height: 10rem;
+    margin: 0; /* Center the div and ensure no vertical margins */
+    text-align: left; /* If you want to center the text */
+    max-width: 100%; /* Prevent horizontal overflow */
+    overflow: hidden; /* Hide any overflow */
+}
+
 
 /* Existing styles in mediaqueries.css remain unchanged */
 

@@ -1,7 +1,7 @@
 /* For viewports wider than 1432px */
 @media (min-width: 1432px) {   
     
-    .container {
+    .container ,.paragraph , .o2-paragraph{
         /* Calculate the remaining viewport width for .container by subtracting #right-widget's fixed width */
         width: calc(100vw - 320px);
     }
@@ -13,7 +13,7 @@
 
 /* For viewports between 1432px and 992px */
 @media (min-width: 992px) and (max-width: 1431px) {
-    .container {
+    .container ,.paragraph , .o2-paragraph {
         /* Calculate the remaining viewport width for .container by subtracting #right-widget's fixed width */
         width: calc(100vw - 320px);
     }
