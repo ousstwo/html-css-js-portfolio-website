@@ -29,6 +29,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // SET UP
+    gsap.set("#right-widget , .paragraph, .o2-paragraph", { y: -window.innerHeight / 10 });
+
     flashSkill();
 
     // After your flashing sequence ends
@@ -55,6 +58,45 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.getElementById("full-screen-overlay").style.display = 'none';
             }
         });
-
     }, skills.length * flashInterval - flashInterval / 1.25);
+
+    setTimeout(() => {
+        gsap.to("#right-widget", {
+            duration: 2,
+            y: 0,
+            ease: "power2.out",
+        });
+    }, skills.length * flashInterval - flashInterval / 1.25 + 0);
+
+    setTimeout(() => {
+        gsap.to(".paragraph", {
+            duration: 2,
+            y: 0,
+            ease: "power2.out",
+        });
+    }, skills.length * flashInterval - flashInterval / 1.25 + 200);
+
+    setTimeout(() => {
+        gsap.to(".o2-paragraph", {
+            duration: 2,
+            y: 0,
+            ease: "power2.out",
+        });
+    }, skills.length * flashInterval - flashInterval / 1.25 + 400);
+
+    const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".main-content",
+          start: "top top",
+          end: "+=1300",
+          scrub: 0.5,
+          pin: true,
+          // markers: true
+        }
+      });
+      
+      // Adjust these animations for your element
+      tl.to(".trailer", { yPercent: -20, duration: 1 }); // Moves up 50% of its height
+      
+
 });

@@ -339,7 +339,20 @@ line-height: 1.4rem;
     overflow: hidden; /* Hide any overflow */
 }
 
-
+.trailer {
+    position: absolute;
+    right: 0;
+    top: calc(0% + 10vh);
+    width: 15.4rem; /* Example: 50% of parent container or adjust as needed */
+    height: 19.25rem;
+    background-color: black;
+    overflow: hidden; /* To handle content overflow */
+  }
+  
+.other {
+    height: 1080px;
+    background-color: var(--color-bg);
+}
 /* Existing styles in mediaqueries.css remain unchanged */
 
 
