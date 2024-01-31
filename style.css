@@ -317,14 +317,17 @@ background-color: var(--color-muted); /* CXhange to your desired underline color
 }
 
 .content {
+    position: relative;
     display: flex; /* This turns on flexbox */
     align-items: center; /* This will vertically center items in the container */
     bottom: 0px;
 }
 
 .start-text {
-    margin-left: 10px; /* Adjust as needed for spacing */
-    font-size: 0.325rem;
+    position: relative; /* This makes it the reference for its absolutely positioned children */
+    display: inline-block; /* Allows the container to fit the width of the content */
+    margin-left: 10px; /* Your existing spacing */
+    font-size: 0.325rem; /* Your existing font size */
 }
 
 .paragraph {
@@ -381,6 +384,18 @@ line-height: 1.4rem;
     height: 1080px;
     background-color: var(--color-bg);
 }
+
+.start-text .underline {
+    display: block;
+    width: 0;
+    height: 2px; /* Thickness of the underline */
+    background-color: var(--color); /* Color of the underline */
+    transition: width 0.3s ease-out; /* Smooth transition for the underline */
+    position: absolute;
+    bottom: -5px; /* Adjust as needed */
+    left: 0;
+}
+
 /* Existing styles in mediaqueries.css remain unchanged */
 
 

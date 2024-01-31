@@ -33,20 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
     gsap.set("#right-widget , .paragraph, .o2-paragraph, .heure, .rabat", { y: -window.innerHeight / 10 });
 
     flashSkill();
-
-    // Hover effect for the SVG inside .rounded-square using GSAP
-    const roundedSquareImg = document.querySelector('.rounded-square img');
-
-    // Ensure the image element exists
-    if (roundedSquareImg) {
-        roundedSquareImg.addEventListener('mouseenter', () => {
-            gsap.to(roundedSquareImg, { scale: 1.25, duration: 0.2 });
-        });
-
-        roundedSquareImg.addEventListener('mouseleave', () => {
-            gsap.to(roundedSquareImg, { scale: 1, duration: 0.2 });
-        });
-    }
     // After your flashing sequence ends, card down
     setTimeout(() => {
         const timeline = gsap.timeline();
@@ -72,7 +58,40 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }, skills.length * flashInterval - flashInterval / 1.25);
+    /////
 
+    // Hover effect for the SVG inside .rounded-square using GSAP
+    const roundedSquareImg = document.querySelector('.rounded-square img');
+    const roundedSquare = document.querySelector('.rounded-square');
+    const underline = document.querySelector('.start-text .underline'); // Ensure we're targeting the right element
+
+    // Ensure the image element exists
+    if (roundedSquareImg) {
+        roundedSquareImg.addEventListener('mouseenter', () => {
+            gsap.to(roundedSquareImg, { scale: 1.25, duration: 0.2 });
+        });
+
+        roundedSquareImg.addEventListener('mouseleave', () => {
+            gsap.to(roundedSquareImg, { scale: 1, duration: 0.2 });
+        });
+
+
+        // Hover effect for the rounded square and underline using GSAP
+        roundedSquare.addEventListener('mouseenter', () => {
+            gsap.to(roundedSquare.querySelector('img'), { scale: 1.25, duration: 0.3 });
+            gsap.to(underline, { width: '100%', duration: 0.3 }); // Animate the underline to full width
+        });
+    
+        roundedSquare.addEventListener('mouseleave', () => {
+            gsap.to(roundedSquare.querySelector('img'), { scale: 1, duration: 0.3 });
+            gsap.to(underline, { width: '0%', duration: 0.3 }); // Animate the underline back to 0 width
+        });
+    }
+
+    
+
+    
+    //////
     setTimeout(() => {
         gsap.to("#right-widget, .heure, .rabat", {
             duration: 2,
