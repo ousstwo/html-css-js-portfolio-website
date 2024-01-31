@@ -28,9 +28,9 @@
 
 :root {
     --base-font-size: 3rem; /* Default size, you can change this value */
-    --color: #F62F63;
-    --color-muted: #F6B8C9;
-    --color-bg: #FDFAFF;
+    --color: #F62F63; /* F62F63 */
+    --color-muted: #F6B8C9; /* F62F63 */
+    --color-bg: #FDFAFF; /* F62F63 */
 }
 
 ::selection {
@@ -236,7 +236,7 @@ background-color: var(--color-muted); /* CXhange to your desired underline color
     right: 0px;
     top: 6.1vh;
     border-radius: 15px; /* Adjust for desired roundness */
-    background-color: #var(--color-bg);; /* Adjust background color as needed */
+    background-color: var(--color-bg);; /* Adjust background color as needed */
     /* Add any other styling as necessary */
 }
 
