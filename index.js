@@ -30,11 +30,24 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // SET UP
-    gsap.set("#right-widget , .paragraph, .o2-paragraph", { y: -window.innerHeight / 10 });
+    gsap.set("#right-widget , .paragraph, .o2-paragraph, .heure, .rabat", { y: -window.innerHeight / 10 });
 
     flashSkill();
 
-    // After your flashing sequence ends
+    // Hover effect for the SVG inside .rounded-square using GSAP
+    const roundedSquareImg = document.querySelector('.rounded-square img');
+
+    // Ensure the image element exists
+    if (roundedSquareImg) {
+        roundedSquareImg.addEventListener('mouseenter', () => {
+            gsap.to(roundedSquareImg, { scale: 1.25, duration: 0.2 });
+        });
+
+        roundedSquareImg.addEventListener('mouseleave', () => {
+            gsap.to(roundedSquareImg, { scale: 1, duration: 0.2 });
+        });
+    }
+    // After your flashing sequence ends, card down
     setTimeout(() => {
         const timeline = gsap.timeline();
 
@@ -61,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, skills.length * flashInterval - flashInterval / 1.25);
 
     setTimeout(() => {
-        gsap.to("#right-widget", {
+        gsap.to("#right-widget, .heure, .rabat", {
             duration: 2,
             y: 0,
             ease: "power2.out",
@@ -95,6 +108,28 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
       
+    // Function to update Rabat clock
+    function updateRabatClock() {
+        var now = new Date(); // Get current time
+        var utc = now.getTime() + now.getTimezoneOffset() * 60000; // Convert to UTC
+        var rabatTime = new Date(utc + (3600000 * 1)); // Rabat is GMT+1
+
+        var hours = rabatTime.getHours();
+        var minutes = rabatTime.getMinutes();
+        var seconds = rabatTime.getSeconds();
+
+        // Add leading zero if less than 10
+        hours = hours < 10 ? '0' + hours : hours;
+        minutes = minutes < 10 ? '0' + minutes : minutes;
+        seconds = seconds < 10 ? '0' + seconds : seconds;
+
+        var timeString = hours + ':' + minutes + ':' + seconds;
+        document.querySelector('.heure').innerText = timeString;
+    }
+
+    // Update the clock every second
+    setInterval(updateRabatClock, 1000);
+
       // Adjust these animations for your element
       tl.to(".trailer", { yPercent: -20, duration: 1 }); // Moves up 50% of its height
       

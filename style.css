@@ -26,6 +26,13 @@
          url('assets/fonts/easy-grotesk-regular.woff2') format('woff2');
 }
 
+@font-face {
+    font-family: 'Supply light';
+    src: url('assets/fonts/supply-light-webfont.woff') format('woff'),
+         url('assets/fonts/supply-light-webfont.woff2') format('woff2');
+}
+
+
 :root {
     --base-font-size: 3rem; /* Default size, you can change this value */
     --color: #F62F63; /* F62F63 */
@@ -240,6 +247,28 @@ background-color: var(--color-muted); /* CXhange to your desired underline color
     /* Add any other styling as necessary */
 }
 
+.heure, .rabat{
+    font-family: 'Supply light', sans-serif;
+    font-size: 0.35rem;
+    box-sizing: border-box;
+    height: 2vh; /* Adjust the height as needed */
+    position: fixed;
+    color: var(--color);
+    top: 1.85vh;
+}
+
+.heure{
+    right: 210px;
+    font-size: 0.35rem;
+
+}
+
+.rabat{
+    right: 43px;
+    font-size: 0.365rem;
+
+}
+
 .rounded-rectangle {
     margin-left: 10px;
     margin-right: 28px;
@@ -272,20 +301,19 @@ background-color: var(--color-muted); /* CXhange to your desired underline color
     transition: opacity .2s;
 }
 
-#heightControl:hover {
-    opacity: 1; /* Fully opaque on hover */
-}
-
 .rounded-square {
     border: 1px solid var(--color);; /* Change as needed */
     border-radius: 6px; /* Adjust for desired roundness */
     width: 36px; /* Adjust size as needed */
     height: 36px; /* Adjust size as needed */
     background-color: var(--color);;
-    background-image: url('assets/arrow-up.svg');
+    background-image: none;
     background-repeat: no-repeat;
     background-position: center; /* adjust as needed */
     background-size: contain; /* or 'cover' depending on how you want it to fit */
+
+    position: relative; /* Add this if not already present */
+    cursor: pointer; /* Changes the cursor on hover */
 }
 
 .content {
