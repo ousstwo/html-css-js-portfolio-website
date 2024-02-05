@@ -1,10 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>Your Page Title</title>
+    <script>
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+        window.onload = function() {
+        window.scrollTo(0, 0);
+        };
+    </script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="mediaqueries.css">
     <meta charset="UTF-8">
     <title>Ouss Two</title>
+    <script>
+        window.onload = function() {
+          window.scrollTo(0, 0);
+        };
+      </script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="preload" href="assets/fonts/rightgrotesk-compactblack-webfont.woff2" as="font" type="font/woff2" crossorigin>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -115,8 +129,8 @@
         </div>
     </div>
     <div class="demo-reel">
-        <video width="100%" loop autoplay muted>
-            <source src="assets/torolo2.mp4" type="video/mp4">
+        <video width="100%" loop autoplay muted controls>
+            <source src="assets/torolo5.mp4" type="video/mp4">
             Your browser does not support the video tag.
          </video>
     </div>
