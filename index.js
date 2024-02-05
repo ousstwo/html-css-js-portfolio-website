@@ -116,16 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, skills.length * flashInterval - flashInterval / 1.25 + 400);
 
-    const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: ".main-content",
-          start: "top top",
-          end: "+=1300",
-          scrub: 0.5,
-          pin: true,
-          // markers: true
-        }
-      });
+
       
     // Function to update Rabat clock
     function updateRabatClock() {
@@ -146,11 +137,32 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelector('.heure').innerText = timeString;
     }
 
-    // Update the clock every second
-    setInterval(updateRabatClock, 1000);
+    const tl = gsap.timeline({
+        scrollTrigger: {
+          start: "top top",
+          end: "+=1300",
+          scrub: 0.5,
+          pin: true,
+          // markers: true
+        }
+      });
 
       // Adjust these animations for your element
       tl.to(".trailer", { yPercent: -20, duration: 1 }); // Moves up 50% of its height
-      
+    
+    // Update the clock every second
+    setInterval(updateRabatClock, 1000);
 
+    // Target the demo reel link
+    const demoReelLink = document.getElementById('demoReelLink');
+
+    // Ensure the link and target element exist
+    if (demoReelLink) {
+        demoReelLink.addEventListener('click', function(e) {
+            e.preventDefault(); // Prevent the default anchor link behavior
+
+            // Use GSAP to scroll to the demo reel section. Adjust the selector as needed.
+            gsap.to(window, {duration:1, scrollTo: ".demo-reel"});
+        });
+    }
 });

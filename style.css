@@ -35,9 +35,9 @@
 
 :root {
     --base-font-size: 3rem; /* Default size, you can change this value */
-    --color: #F62F63; /* F62F63 */
-    --color-muted: #F6B8C9; /* F62F63 */
-    --color-bg: #FDFAFF; /* F62F63 */
+    --color: #b66940; /* F62F63 */
+    --color-muted: #e9d3b9; /* F6B8C9 */
+    --color-bg: #f5ecdf; /* FDFAFF */
 }
 
 ::selection {
@@ -61,7 +61,6 @@ body, html {
     overflow-x: hidden;
     overflow-y: auto; /* Only show the vertical scrollbar when needed */
     font-family: 'Right Grotesk Compact', sans-serif;
-    scroll-behavior: smooth;
     display: flex;
     flex-direction: column;
     background-color: var(--color-bg);; /* New background color */
@@ -174,7 +173,7 @@ background-color: var(--color-muted); /* CXhange to your desired underline color
 
     backdrop-filter: blur(9px); /* Adjust the blur intensity as needed */
     -webkit-backdrop-filter: blur(9px); /* For Safari compatibility */
-    background: rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0);
 }
 
 .navbar {
@@ -289,18 +288,6 @@ background-color: var(--color-muted); /* CXhange to your desired underline color
     color: #000; /* Change as needed */
 }
 
-#heightControl {
-    -webkit-appearance: none;  /* Override default appearance */
-    appearance: none;
-    width: 100%; /* Full-width */
-    height: 15px; /* Specified height */
-    background: #d3d3d3; /* Grey background */
-    outline: none; /* Remove outline */
-    opacity: 0.7; /* Set transparency (optional) */
-    -webkit-transition: .2s; /* Transition for hover effect */
-    transition: opacity .2s;
-}
-
 .rounded-square {
     border: 1px solid var(--color);; /* Change as needed */
     border-radius: 6px; /* Adjust for desired roundness */
@@ -346,13 +333,13 @@ background-color: var(--color-muted); /* CXhange to your desired underline color
     box-sizing: border-box; /* Include padding and borders in width */
 }
 
-.other > * {
+.demo-reel > * {
     max-width: 100%; /* Ensure children do not cause overflow */
     overflow-x: hidden; /* Hide horizontal overflow */
     box-sizing: border-box; /* Include padding and borders in width */
 }
 
-.paragraph , .o2-paragraph, .other{
+.paragraph , .o2-paragraph, .demo-reel{
     /* background-color: greenyellow; */
     color: var(--color);
     padding-left: 3.42vw;
@@ -386,7 +373,7 @@ line-height: 1.4rem;
     overflow: hidden; /* To handle content overflow */
   }
   
-.other {
+.demo-reel {
     height: 1080px;
     background-color: var(--color-bg);
 }
