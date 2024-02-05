@@ -173,7 +173,7 @@ background-color: var(--color-muted); /* CXhange to your desired underline color
 
     backdrop-filter: blur(10px); /* Adjust the blur intensity as needed */
     -webkit-backdrop-filter: blur(9px); /* For Safari compatibility */
-    background: var(--color-bg);
+    background: rgba(245, 236, 223, 0.65);
 }
 
 .navbar {
