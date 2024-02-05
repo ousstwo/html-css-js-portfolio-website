@@ -346,7 +346,13 @@ background-color: var(--color-muted); /* CXhange to your desired underline color
     box-sizing: border-box; /* Include padding and borders in width */
 }
 
-.paragraph , .o2-paragraph{
+.other > * {
+    max-width: 100%; /* Ensure children do not cause overflow */
+    overflow-x: hidden; /* Hide horizontal overflow */
+    box-sizing: border-box; /* Include padding and borders in width */
+}
+
+.paragraph , .o2-paragraph, .other{
     /* background-color: greenyellow; */
     color: var(--color);
     padding-left: 3.42vw;
