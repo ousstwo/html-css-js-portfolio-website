@@ -162,7 +162,13 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault(); // Prevent the default anchor link behavior
 
             // Use GSAP to scroll to the demo reel section. Adjust the selector as needed.
-            gsap.to(window, {duration:1, scrollTo: ".demo-reel"});
-        });
+            gsap.to(window, {
+                duration: 1,
+                scrollTo: {
+                    y: ".demo-reel",
+                    offsetY: 20
+                },
+                ease: "power2.out"
+            });        });
     }
 });
