@@ -171,4 +171,28 @@ document.addEventListener('DOMContentLoaded', () => {
                 ease: "power2.out"
             });        });
     }
+
+
+        // Target the down button
+        const downButton = document.getElementById('downButton');
+
+        // Target the demo reel section to ensure it exists
+        const demoReelSection = document.querySelector('.demo-reel');
+    
+        // Ensure both the button and the target section exist
+        if (downButton && demoReelSection) {
+            downButton.addEventListener('click', function(e) {
+                e.preventDefault(); // Prevent the default behavior
+    
+                // Use GSAP to scroll to the demo reel section
+                gsap.to(window, {
+                    duration: 1,
+                    scrollTo: {
+                        y: demoReelSection, // Scroll to the demo reel section
+                        offsetY: 20 // Optional: Adjust the offset as needed
+                    },
+                    ease: "power2.out"
+                });
+            });
+        }
 });
