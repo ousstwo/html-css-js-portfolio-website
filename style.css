@@ -347,6 +347,8 @@ background-color: var(--color-muted); /* CXhange to your desired underline color
     box-sizing: border-box; /* Include padding in the width */
 }
 
+
+
 .paragraph {
 font-family: "Easy grotesk", sans-serif;
 font-size: 1.25rem; /* *1.12 */
@@ -355,8 +357,8 @@ line-height: 1.4rem;
 
 .o2-paragraph {
     font-family: "Right Grotesk Compact", sans-serif;
-    font-size: 11.5rem; 
-    line-height: 9.2rem;
+    font-size: 9.5rem; 
+    line-height: 7.6rem;
     margin: 0; /* Center the div and ensure no vertical margins */
     text-align: left; /* If you want to center the text */
     max-width: 100%; /* Prevent horizontal overflow */
