@@ -35,9 +35,9 @@
 
 :root {
     --base-font-size: 3rem; /* Default size, you can change this value */
-    --color: #2b4237; /* b66940 */
-    --color-muted: #8d99ae; /* F6B8C9 */
-    --color-bg: #f4f1ed; /* FDFAFF */
+    --color: #EF233C; /* b66940 */
+    --color-muted: #E68591; /* F6B8C9 */
+    --color-bg: #F1FAEE; /* FDFAFF */
 }
 
 ::selection {
