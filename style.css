@@ -35,9 +35,9 @@
 
 :root {
     --base-font-size: 3rem; /* Default size, you can change this value */
-    --color: #B64223; /* b66940 */
-    --color-muted: #e9b19d; /* F6B8C9 */
-    --color-bg: #f7f0e1; /* FDFAFF */
+    --color: #2b2d42; /* b66940 */
+    --color-muted: #8d99ae; /* F6B8C9 */
+    --color-bg: #edf2f4; /* FDFAFF */
 }
 
 ::selection {
@@ -173,7 +173,7 @@ background-color: var(--color-muted); /* CXhange to your desired underline color
 
     backdrop-filter: blur(10px); /* Adjust the blur intensity as needed */
     -webkit-backdrop-filter: blur(10px); /* For Safari compatibility */
-    background: rgba(245, 236, 223, 0.45);
+    background: rgba(237, 242, 244, 0.45);
 }
 
 .navbar {
