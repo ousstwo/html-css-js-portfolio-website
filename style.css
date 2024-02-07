@@ -32,12 +32,38 @@
          url('assets/fonts/supply-light-webfont.woff2') format('woff2');
 }
 
+@font-face {
+    font-family: 'Public sans medium';
+    src: url('assets/fonts/PublicSans-Medium.woff') format('woff'),
+         url('assets/fonts/PublicSans-Medium.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Public sans light';
+    src: url('assets/fonts/PublicSans-Light.woff') format('woff'),
+         url('assets/fonts/PublicSans-Light.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Public sans bold';
+    src: url('assets/fonts/PublicSans-Bold.woff') format('woff'),
+         url('assets/fonts/PublicSans-Bold.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Public sans semi bold';
+    src: url('assets/fonts/PublicSans-SemiBold.woff') format('woff'),
+         url('assets/fonts/PublicSans-SemiBold.woff2') format('woff2');
+}
+
+
+
 
 :root {
     --base-font-size: 3rem; /* Default size, you can change this value */
-    --color: #EF233C; /* b66940 */
-    --color-muted: #E68591; /* F6B8C9 */
-    --color-bg: #F1FAEE; /* FDFAFF */
+    --color: #000000; /* b66940 */
+    --color-muted: #afafaf; /* F6B8C9 */
+    --color-bg: #FFFFFF; /* FDFAFF */
 }
 
 ::selection {
@@ -143,7 +169,7 @@ body, html {
 .container,
 .container a,
 .container i {
-    font-family: 'Easy grotesk', sans-serif;
+    font-family: 'Public sans light', sans-serif;
 }
 
 .container > * {
@@ -173,7 +199,7 @@ background-color: var(--color-muted); /* CXhange to your desired underline color
 
     backdrop-filter: blur(10px); /* Adjust the blur intensity as needed */
     -webkit-backdrop-filter: blur(10px); /* For Safari compatibility */
-    background: var(--color-bg);
+    background: rgb(255, 255, 255, 0.5);
 }
 
 .navbar {
@@ -189,6 +215,7 @@ background-color: var(--color-muted); /* CXhange to your desired underline color
 }
 
 .logo-ouss-two {
+    cursor: pointer;
     display: flex;
     align-items: center;
     color: var(--color);
@@ -234,7 +261,7 @@ background-color: var(--color-muted); /* CXhange to your desired underline color
 }
 
 #right-widget {
-    font-family: 'Easy grotesk', sans-serif;
+    font-family: 'Public sans light', sans-serif;
     font-size: 0.35rem;
     box-sizing: border-box;
     height: 20vh; /* Adjust the height as needed */
@@ -334,23 +361,41 @@ background-color: var(--color-muted); /* CXhange to your desired underline color
 }
 
 .demo-reel > * {
-    max-width: 100%; /* Ensure children do not cause overflow */
+    max-width: 90%; /* Ensure children do not cause overflow */
     overflow-x: hidden; /* Hide horizontal overflow */
     box-sizing: border-box; /* Include padding and borders in width */
 }
 
-.paragraph , .o2-paragraph, .demo-reel{
+.paragraph , .o2-paragraph{
     /* background-color: greenyellow; */
     color: var(--color);
     padding-left: 3.42vw;
-    padding-top: 5.5vh;
     box-sizing: border-box; /* Include padding in the width */
 }
 
+.paragraph{
+    padding-top: 5.5vh;
+}
+
+.o2-paragraph{
+    padding-top: 5.5vh;
+}
+
+.demo-reel{
+    padding-top: 7vh;
+    padding-left: 4vw;
+}
+
+.work{
+    padding-top: 7vh;
+    font-family: "Public sans medium";
+    font-size: 3vh;
+    color: black;
+}
 
 
 .paragraph {
-font-family: "Easy grotesk", sans-serif;
+font-family: "Public sans light", sans-serif;
 font-size: 1.25rem; /* *1.12 */
 line-height: 1.4rem;
 }
@@ -381,7 +426,7 @@ line-height: 1.4rem;
 }
 
 .demo-reel video {
-    box-shadow: 0 10px 10px rgb(197, 197, 197, 0.25);
+    box-shadow: 0 0 10px 10px rgb(197, 197, 197, 0.25);
     overflow: visible;
 }
 
@@ -404,6 +449,41 @@ line-height: 1.4rem;
 }
 /* Existing styles in mediaqueries.css remain unchanged */
 
+table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    padding: 8px;
+    padding-left: 3.75vw; /* Adjust this value as needed for your desired left padding */
+    text-align: left;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+  }
+  
+  tr:first-child th:first-child {
+    border-top-left-radius: 10px;
+  }
+  
+  tr:first-child th:last-child {
+    border-top-right-radius: 10px;
+  }
+  
+  tr:last-child td:first-child {
+    border-bottom-left-radius: 10px;
+  }
+  
+  tr:last-child td:last-child {
+    border-bottom-right-radius: 10px;
+  }
+  
+  
+  /* Remove border from the bottom of the last th element */
+
+  
+  /* Add more CSS styling as needed */
+  
 
 /* Debugging border, remove or comment out for production */
 /* * { border: 1px solid red !important; } */

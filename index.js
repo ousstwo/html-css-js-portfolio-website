@@ -155,7 +155,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Target the demo reel link
     const demoReelLink = document.getElementById('demoReelLink');
-
     // Ensure the link and target element exist
     if (demoReelLink) {
         demoReelLink.addEventListener('click', function(e) {
@@ -166,33 +165,27 @@ document.addEventListener('DOMContentLoaded', () => {
                 duration: 1,
                 scrollTo: {
                     y: ".demo-reel",
-                    offsetY: 20
+                    offsetY: 40
                 },
                 ease: "power2.out"
             });        });
     }
 
+    // Target the demo reel link
+    const workLink = document.getElementById('workLink');
+    // Ensure the link and target element exist
+    if (workLink) {
+        workLink.addEventListener('click', function(e) {
+            e.preventDefault(); // Prevent the default anchor link behavior
 
-        // Target the down button
-        const downButton = document.getElementById('downButton');
-
-        // Target the demo reel section to ensure it exists
-        const demoReelSection = document.querySelector('.demo-reel');
-    
-        // Ensure both the button and the target section exist
-        if (downButton && demoReelSection) {
-            downButton.addEventListener('click', function(e) {
-                e.preventDefault(); // Prevent the default behavior
-    
-                // Use GSAP to scroll to the demo reel section
-                gsap.to(window, {
-                    duration: 1,
-                    scrollTo: {
-                        y: demoReelSection, // Scroll to the demo reel section
-                        offsetY: 20 // Optional: Adjust the offset as needed
-                    },
-                    ease: "power2.out"
-                });
-            });
-        }
+            // Use GSAP to scroll to the demo reel section. Adjust the selector as needed.
+            gsap.to(window, {
+                duration: 1,
+                scrollTo: {
+                    y: ".work",
+                    offsetY: 0
+                },
+                ease: "power2.out"
+            });        });
+    }
 });
