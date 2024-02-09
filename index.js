@@ -186,6 +186,23 @@ document.addEventListener('DOMContentLoaded', () => {
             });        });
     }
 
+    const watchReelLink = document.getElementById('watchReelLink');
+    // Ensure the link and target element exist
+    if (watchReelLink) {
+        watchReelLink.addEventListener('click', function(e) {
+            e.preventDefault(); // Prevent the default anchor link behavior
+
+            // Use GSAP to scroll to the demo reel section. Adjust the selector as needed.
+            gsap.to(window, {
+                duration: 1,
+                scrollTo: {
+                    y: ".demo-reel",
+                    offsetY: 100
+                },
+                ease: "power2.out"
+            });        });
+    }
+
     // Target the demo reel link
     const workLink = document.getElementById('workLink');
     // Ensure the link and target element exist
