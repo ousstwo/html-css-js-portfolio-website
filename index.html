@@ -14,95 +14,88 @@
     <link rel="stylesheet" href="mediaqueries.css">
     <meta charset="UTF-8">
     <title>Ouss Two</title>
-    <script>
-        window.onload = function() {
-          window.scrollTo(0, 0);
-        };
-      </script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="preload" href="assets/fonts/rightgrotesk-compactblack-webfont.woff2" as="font" type="font/woff2" crossorigin>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
     <script type="module" src="index.js" defer></script>
-    <!-- Add this inside your <body> tag, preferably at the top or within your header structure -->
         <div id="full-screen-overlay">
             <div id="skills-container">
                 <div class="overlay-text">ALL THINGS</div>
     
                 <!-- Repeat the following block for each skill -->
-                <div class="skill" id="skill-design">
+
+                <div class="skill" id="skill-sound-design">
                     <div class="skill-icon">
-                        <img src="assets/design.svg" alt="Design Icon">
+                        <img src="assets/sound.svg" alt="Sound Design Icon">
                     </div>
-                    DESIGN
+                    SOUND DESIGN
                 </div>
-            
-            <div class="skill" id="skill-animation">
-                <div class="skill-icon">
-                    <img src="assets/animation.svg" alt="Animation Icon">
-                </div>
-                ANIMATION
-            </div>
-    
-            <div class="skill" id="skill-3d">
-                <div class="skill-icon">
-                    <img src="assets/3d.svg" alt="3D Icon">
-                </div>
-                3D
-            </div>
-    
+        
             <div class="skill" id="skill-editing">
                 <div class="skill-icon">
                     <img src="assets/editing.svg" alt="Editing Icon">
                 </div>
                 EDITING
             </div>
-    
+
             <div class="skill" id="skill-ux">
                 <div class="skill-icon">
                     <img src="assets/ux.svg" alt="UX Icon">
                 </div>
                 UX
             </div>
-    
-            <div class="skill" id="skill-sound-design">
+
+            <div class="skill" id="skill-3d">
                 <div class="skill-icon">
-                    <img src="assets/sound.svg" alt="Sound Design Icon">
+                    <img src="assets/3d.svg" alt="3D Icon">
                 </div>
-                SOUND DESIGN
+                3D
             </div>
+
+            <div class="skill" id="skill-design">
+                <div class="skill-icon">
+                    <img src="assets/design.svg" alt="Design Icon">
+                </div>
+                DESIGN
+            </div>
+
+            <div class="skill" id="skill-animation">
+                <div class="skill-icon">
+                    <img src="assets/animation.svg" alt="Animation Icon">
+                </div>
+                ANIMATION
+            </div>
+
         </div>
     </div>
 </head>
 <body>
     <div id="right-widget"> 
-        <div class="rounded-rectangle">
+        <div class="rounded-rectangle-contact">
             <p>Interested in Collaborating?</p>
             <div class="content">
-                <!-- Wrap the rounded-square in an anchor tag -->
                 <a href="mailto:tounssi.mograph@gmail.com" class="rounded-square">
                     <img src="assets/arrow-up.svg" alt="Arrow Up">
                 </a>                
                 <p class="start-text">Contact Me<span class="underline"></span></p> <!-- Wrap the underline in a span -->
             </div>
-        </div>        
+        </div>     
     </div> 
+    
     <div class="heure">
         03:35:21
     </div>
     <div class="rabat">
         Rabat
     </div>
-    <div id="main-content">
-    <!-- Navbar starts here -->
     <div class="container">
         <div class="navbar">
             <div class="navbar-brand">
                 <div class="logo-ouss-two" id="oussama/tounssi" onclick="window.location.href='https://ousstwo.com';" style="cursor: pointer;">
-                    <div class="logo"> <img src="assets/logo-fixed.svg" alt="Website logo" width="30" height="30">
                     </div>
-                    <div class="ouss-two"> <span>Oussama/Tounssi</span> </div>
+                    <div class="ouss-two" onclick="window.location.href='https://ousstwo.com';" style="cursor: pointer;"> <span>Oussama Tounssi</span> </div>
                 </div>
                 <nav>
                     <ul class="reel-work-about">
@@ -116,34 +109,59 @@
         </div>
         <div class="navbar-underline"></div>
     </div>
-    <div class="paragraph"> I'm a freelance graphic designer with focuses on 2D and 3D motion design. I've worked with clients around the world. Let's craft design that resonate with your audience.</div>
     <div class="o2-paragraph">
-        01 YEAR<br>
-        OF 0/2
+        Multidisciplinary<br>
+        Digital Designer
     </div>
-    <div class="demo-reel">
-        <video width="100%" loop  muted controls>
-            <source src="assets/torolo5.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-         </video>
+    <div class="paragraph"> I'm a freelance designer with focuses in <br> 2D and 3D motion design, aiming  <br> to captivate your audience. </div>
+
+    <div class="button-wrapper"> 
+        <div class="watch-reel-button"> Watch Reel</div>
     </div>
 
-    <div class="work"> 
-    <table>
-  <tr>
-    <td>Fxs James Campaign</td>
-    <td>Motion Design / Social Media Management</td>
-  </tr>
-  <tr>
-    <td>Design Dailies</td>
-    <td>Design Personal Project </td>
-  </tr>
-  <tr>
-    <td>Music Box</td>
-    <td>Texturing / Lighting / Camera Work </td>
-  </tr>
-  <!-- Add more rows as needed -->
-    </table>
-    </div>
+
+    <div class="demo-reel-container">
+        <div class="demo-reel">
+            <iframe title="vimeo-player" src="https://player.vimeo.com/video/911295213?h=9ee6e90bbf" frameborder="0" allowfullscreen></iframe>
+        </div>
+        </div>
+
+
+        <div class="work-sections">
+            <div class="section" id="section1">
+                <div class="half" id="section1-half1">
+                    <!-- Content for the first half of section 1 -->
+                    <h3>Design Dailies</h3>
+                    <p>Design Personal Project</p>
+                </div>
+                <div class="half" id="section1-half2">
+                    <!-- Content for the second half of section 1 -->
+                    <p>I took on a project to make a new poster each day from words like "dance" or "travel." It was a fun challenge that improved my design skills. Each day, I turned a new word into art, pushing my creativity.</p>
+                </div>
+            </div>
+            <div class="section" id="section2">
+                <div class="half" id="section2-half1">
+                    <!-- Content for the first half of section 2 -->
+                    <h3>Music Box</h3>
+                    <p>Speculative ad (3D and 2D)</p>
+                </div>
+                <div class="half" id="section2-half2">
+                    <!-- Content for the second half of section 2 -->
+                    <p>A project visualizing part of an ad for a Christmas music box, focusing on 3D techniques and incorporating 2D touches. I took care of the modeling, lighting, texturing, rendering, and animation.</p>
+                </div>
+            </div>
+            <div class="section" id="section3">
+                <div class="half" id="section3-half1">
+                    <!-- Content for the first half of section 3 -->
+                    <h3>Trading Visuals</h3>
+                    <p>Paid animation work</p>
+                </div>
+                <div class="half" id="section3-half2">
+                    <!-- Content for the second half of section 3 -->
+                    <p>I produced 16 social media reels featuring animated visuals on trading and self-improvement concepts. This project showcased my ability to translate complex ideas into engaging short-form content. And garnered over 350k views.</p>
+                </div>
+            </div>
+        </div>
+        
       </body>
 </html>

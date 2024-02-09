@@ -15,27 +15,9 @@
 }
 
 @font-face {
-    font-family: 'PP neue montreal book';
-    src: url('assets/fonts/pp_neue_montreal_book-webfont.woff') format('woff'),
-         url('assets/fonts/pp_neue_montreal_book-webfont.woff2') format('woff2');
-}
-
-@font-face {
-    font-family: 'Easy grotesk';
-    src: url('assets/fonts/easy-grotesk-regular.woff') format('woff'),
-         url('assets/fonts/easy-grotesk-regular.woff2') format('woff2');
-}
-
-@font-face {
     font-family: 'Supply light';
     src: url('assets/fonts/supply-light-webfont.woff') format('woff'),
          url('assets/fonts/supply-light-webfont.woff2') format('woff2');
-}
-
-@font-face {
-    font-family: 'Public sans medium';
-    src: url('assets/fonts/PublicSans-Medium.woff') format('woff'),
-         url('assets/fonts/PublicSans-Medium.woff2') format('woff2');
 }
 
 @font-face {
@@ -45,9 +27,9 @@
 }
 
 @font-face {
-    font-family: 'Public sans bold';
-    src: url('assets/fonts/PublicSans-Bold.woff') format('woff'),
-         url('assets/fonts/PublicSans-Bold.woff2') format('woff2');
+    font-family: 'Public sans medium';
+    src: url('assets/fonts/PublicSans-Medium.woff') format('woff'),
+         url('assets/fonts/PublicSans-Medium.woff2') format('woff2');
 }
 
 @font-face {
@@ -56,14 +38,28 @@
          url('assets/fonts/PublicSans-SemiBold.woff2') format('woff2');
 }
 
+@font-face {
+    font-family: 'Public sans bold';
+    src: url('assets/fonts/PublicSans-Bold.woff') format('woff'),
+         url('assets/fonts/PublicSans-Bold.woff2') format('woff2');
+}
 
-
+@font-face {
+    font-family: 'Inter bold';
+    src: url('assets/fonts/InterTight-Bold.woff') format('woff'),
+         url('assets/fonts/InterTight-Bold.woff2') format('woff2');
+}
 
 :root {
     --base-font-size: 3rem; /* Default size, you can change this value */
     --color: #000000; /* b66940 */
     --color-muted: #afafaf; /* F6B8C9 */
     --color-bg: #FFFFFF; /* FDFAFF */
+
+    --o2-parag-fonts: 14vh;
+    --parag-fonts: calc(var(--o2-parag-fonts) / 3.5);
+    --button-fonts: calc(var(--parag-fonts) / 1.618);
+
 }
 
 ::selection {
@@ -166,23 +162,17 @@ body, html {
     box-shadow: 0 20px 105px rgb(241, 250, 238, 0.5);
 }
 
-.container,
-.container a,
-.container i {
-    font-family: 'Public sans light', sans-serif;
-}
-
 .container > * {
     max-width: 100%; /* Ensure children do not cause overflow */
     overflow-x: hidden; /* Hide horizontal overflow */
+    overflow-y: hidden;
     box-sizing: border-box; /* Include padding and borders in width */
 }
 
-/* Add this style for the navbar underline */
 .navbar-underline {
 width: 100%;
 height: 1px;
-background-color: var(--color-muted); /* CXhange to your desired underline color */
+background-color: rgb(197, 197, 197, 0); /* CXhange to your desired underline color */
 
 }
 
@@ -219,15 +209,15 @@ background-color: var(--color-muted); /* CXhange to your desired underline color
     display: flex;
     align-items: center;
     color: var(--color);
-    padding-right: 2.25rem;
 }
 
 .ouss-two {
-    font-size: 0.35rem;
-    padding-left: 0.25rem;
+    font-family: "Public sans light";
+    font-size: 0.4rem;
 }
 
 .reel-work-about {
+    font-family: "Public sans light", 'sans serif';
     list-style: none;
     display: flex;
     margin: 0;
@@ -246,36 +236,15 @@ background-color: var(--color-muted); /* CXhange to your desired underline color
 .contact a {
     text-decoration: none;
     color: var(--color);
-    font-size: 0.35rem;
+    font-size: 0.4rem;
     align-items: center;
     display: flex;
     /* Add any other styles for your links here */
 }
 
-.skill {
-    /* Styles for skill blocks */
-}
-
-.skill-icon img {
-    /* Styles for skill icons */
-}
-
-#right-widget {
-    font-family: 'Public sans light', sans-serif;
-    font-size: 0.35rem;
-    box-sizing: border-box;
-    height: 20vh; /* Adjust the height as needed */
-    position: fixed;
-    right: 0px;
-    top: 6.1vh;
-    border-radius: 15px; /* Adjust for desired roundness */
-    background-color: var(--color-bg);; /* Adjust background color as needed */
-    /* Add any other styling as necessary */
-}
-
 .heure, .rabat{
     font-family: 'Supply light', sans-serif;
-    font-size: 0.35rem;
+    font-size: 0.4rem;
     box-sizing: border-box;
     height: 2vh; /* Adjust the height as needed */
     position: fixed;
@@ -292,10 +261,20 @@ background-color: var(--color-muted); /* CXhange to your desired underline color
 .rabat{
     right: 43px;
     font-size: 0.365rem;
-
 }
 
-.rounded-rectangle {
+#right-widget {
+    font-family: 'Public sans light', sans-serif;
+    font-size: 0.35rem;
+    box-sizing: border-box;
+    position: fixed;
+    right: 0px;
+    top: 6.1vh;
+    border-radius: 15px; /* Adjust for desired roundness */
+    /* Add any other styling as necessary */
+}
+
+.rounded-rectangle-contact {
     margin-left: 10px;
     margin-right: 28px;
     color: var(--color);;
@@ -325,9 +304,24 @@ background-color: var(--color-muted); /* CXhange to your desired underline color
     background-repeat: no-repeat;
     background-position: center; /* adjust as needed */
     background-size: contain; /* or 'cover' depending on how you want it to fit */
-
     position: relative; /* Add this if not already present */
     cursor: pointer; /* Changes the cursor on hover */
+}
+
+.rounded-rectangle-project {
+    
+    margin-left: 10px;
+    margin-right: 28px;
+    color: var(--color);;
+    border: 1px solid var(--color-muted);; /* Change as needed */
+    height: 7.vh;
+    border-radius: 8px; /* Adjust for desired roundness */
+    padding: 15px;
+    padding-top: 20px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .content {
@@ -344,8 +338,15 @@ background-color: var(--color-muted); /* CXhange to your desired underline color
     font-size: 0.325rem; /* Your existing font size */
 }
 
-.paragraph {
-    margin-top: 6.1vh;
+.start-text .underline {
+    display: block;
+    width: 0;
+    height: 2px; /* Thickness of the underline */
+    background-color: var(--color); /* Color of the underline */
+    transition: width 0.15s ease-out; /* Smooth transition for the underline */
+    position: absolute;
+    bottom: -5px; /* Adjust as needed */
+    left: 0;
 }
 
 .paragraph > * {
@@ -360,12 +361,6 @@ background-color: var(--color-muted); /* CXhange to your desired underline color
     box-sizing: border-box; /* Include padding and borders in width */
 }
 
-.demo-reel > * {
-    max-width: 90%; /* Ensure children do not cause overflow */
-    overflow-x: hidden; /* Hide horizontal overflow */
-    box-sizing: border-box; /* Include padding and borders in width */
-}
-
 .paragraph , .o2-paragraph{
     /* background-color: greenyellow; */
     color: var(--color);
@@ -373,112 +368,124 @@ background-color: var(--color-muted); /* CXhange to your desired underline color
     box-sizing: border-box; /* Include padding in the width */
 }
 
-.paragraph{
-    padding-top: 5.5vh;
-}
-
-.o2-paragraph{
-    padding-top: 5.5vh;
-}
-
-.demo-reel{
-    padding-top: 7vh;
-    padding-left: 4vw;
-}
-
-.work{
-    padding-top: 7vh;
-    font-family: "Public sans medium";
-    font-size: 3vh;
-    color: black;
-}
-
-
-.paragraph {
-font-family: "Public sans light", sans-serif;
-font-size: 1.25rem; /* *1.12 */
-line-height: 1.4rem;
-}
-
 .o2-paragraph {
-    font-family: "Right Grotesk Compact", sans-serif;
-    font-size: 7rem; 
-    line-height: 5.6rem;
+    padding-top: calc(5.5vh + 5.5vh);
+    padding-bottom: 0.85vh;
+    font-family: "Inter bold", sans-serif;
+    font-size: var(--o2-parag-fonts); 
+    line-height: calc(1.041 * var(--o2-parag-fonts));
     margin: 0; /* Center the div and ensure no vertical margins */
     text-align: left; /* If you want to center the text */
     max-width: 100%; /* Prevent horizontal overflow */
     overflow: hidden; /* Hide any overflow */
 }
 
-.trailer {
-    position: absolute;
-    right: 0;
-    top: calc(0% + 10vh);
-    width: 15.4rem; /* Example: 50% of parent container or adjust as needed */
-    height: 19.25rem;
-    background-color: black;
-    overflow: hidden; /* To handle content overflow */
-  }
-  
+.paragraph {
+    padding-top: 2vh;
+    font-family: "Public sans light", sans-serif;
+    font-size: var(--parag-fonts);
+    line-height: calc(var(--parag-fonts) * 1.133);
+}
+
+.button-wrapper{
+    padding-top: 3.5vh;
+    padding-left: 3.42vw;
+    font-size: var(--button-fonts);
+    font-family: "Public sans light";
+}
+
+.watch-reel-button > * {
+    max-width: 100%; /* Ensure children do not cause overflow */
+    overflow-x: hidden; /* Hide horizontal overflow */
+    box-sizing: border-box; /* Include padding and borders in width */
+}
+
+.watch-reel-button {
+    border: 1px solid var(--color); /* Change as needed */
+    border-radius: 30px; /* Adjust for desired roundness */
+    width: 210px; /* Adjust size as needed */
+    height: 60px; /* Adjust size as needed */
+    background-color: #FFFFFF;
+    background-image: none;
+    background-repeat: no-repeat;
+    background-position: center; /* adjust as needed */
+    background-size: contain; /* or 'cover' depending on how you want it to fit */
+    position: relative; /* Add this if not already present */
+    cursor: pointer; /* Changes the cursor on hover */
+    display: flex; /* Enable flexbox */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    text-align: center; /* Ensure the text is centered */
+    /* Remove line-height if you use flexbox */
+}
+
+.demo-reel-container{
+    padding-top: 16vh;
+    padding-left: 3.42vw; /* Adjust this value to add padding to the left */
+    padding-right: 8vw;
+}
+
 .demo-reel {
-    height: auto;
-    background-color: var(--color-bg);
+    position: relative;
+    padding-bottom: 56.25%; /* for 16:9 aspect ratio, for 4:3 use 75% */
+    height: 0;
 }
 
-.demo-reel video {
-    box-shadow: 0 0 10px 10px rgb(197, 197, 197, 0.25);
-    overflow: visible;
-}
-
-.start-text .underline {
-    display: block;
-    width: 0;
-    height: 2px; /* Thickness of the underline */
-    background-color: var(--color); /* Color of the underline */
-    transition: width 0.3s ease-out; /* Smooth transition for the underline */
+.demo-reel iframe {
     position: absolute;
-    bottom: -5px; /* Adjust as needed */
+    top: 0;
     left: 0;
-}
-
-.down-button{
-    position: absolute;
-    top: 25vh;
-    right: 2.5vw;
-
-}
-/* Existing styles in mediaqueries.css remain unchanged */
-
-table {
     width: 100%;
-    border-collapse: collapse;
-  }
-  
-  th, td {
-    padding: 8px;
-    padding-left: 3.75vw; /* Adjust this value as needed for your desired left padding */
-    text-align: left;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
-  }
-  
-  tr:first-child th:first-child {
-    border-top-left-radius: 10px;
-  }
-  
-  tr:first-child th:last-child {
-    border-top-right-radius: 10px;
-  }
-  
-  tr:last-child td:first-child {
-    border-bottom-left-radius: 10px;
-  }
-  
-  tr:last-child td:last-child {
-    border-bottom-right-radius: 10px;
-  }
-  
-  
+    height: 100%;
+}
+
+
+.work-sections {
+    display: flex;
+    flex-direction: column; /* Stack sections vertically */
+    padding-top: 12vh;
+    padding-right: 8vw;
+    padding-left: 3.42vw;
+    color: black;
+}
+
+.section {
+    flex: 1; /* Each section takes equal space, you might want to set a min-height */
+    display: flex; /* Use flexbox for the halves */
+    flex-direction: row; /* Arrange halves side by side */
+}
+
+.half {
+    flex: 1; /* Each half takes up equal width */
+    padding: 10px; /* Add some spacing inside each half */
+    box-sizing: border-box; /* Include padding in the element's total width and height */
+}
+
+.half h3 {
+    font-family: "Public sans medium";
+    font-size: 3vh;
+}
+
+.half p{
+    font-family: "Public sans light";
+    font-size: 1.85vh;
+}
+
+/* Optional: adjust the height of the sections if you want them to be a specific height or more responsive */
+.section {
+    min-height: 200px; /* Example: Set a minimum height for each section */
+}
+
+/* Optional: specific styles for visual differentiation */
+#section1-half1, #section2-half1, #section3-half1 {
+    background-color: #FFFFFF;
+}
+
+#section1-half2, #section2-half2, #section3-half2 {
+    background-color: #FFFFFF;
+}
+
+
   /* Remove border from the bottom of the last th element */
 
   

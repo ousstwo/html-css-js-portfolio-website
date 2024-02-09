@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // SET UP
-    gsap.set("#right-widget , .paragraph, .o2-paragraph, .heure, .rabat", { y: -window.innerHeight / 10 });
+    gsap.set("#right-widget , .paragraph, .o2-paragraph, .heure, .rabat, .demo-reel-container, .button-wrapper", { y: -window.innerHeight / 10 });
 
     flashSkill();
     // After your flashing sequence ends, card down
@@ -94,28 +94,43 @@ document.addEventListener('DOMContentLoaded', () => {
     //////
     setTimeout(() => {
         gsap.to("#right-widget, .heure, .rabat", {
-            duration: 2,
+            duration: 1.75,
             y: 0,
             ease: "power2.out",
         });
     }, skills.length * flashInterval - flashInterval / 1.25 + 0);
 
     setTimeout(() => {
-        gsap.to(".paragraph", {
-            duration: 2,
+        gsap.to(".o2-paragraph", {
+            duration: 1.75,
             y: 0,
             ease: "power2.out",
         });
     }, skills.length * flashInterval - flashInterval / 1.25 + 200);
 
     setTimeout(() => {
-        gsap.to(".o2-paragraph", {
-            duration: 2,
+        gsap.to(".paragraph", {
+            duration: 1.75,
             y: 0,
-            ease: "power2.out",
+            ease: "power3.out",
         });
     }, skills.length * flashInterval - flashInterval / 1.25 + 400);
 
+    setTimeout(() => {
+        gsap.to(".button-wrapper", {
+            duration: 1.75,
+            y: 0,
+            ease: "power3.out",
+        });
+    }, skills.length * flashInterval - flashInterval / 1.25 + 600);
+
+    setTimeout(() => {
+        gsap.to(".demo-reel-container", {
+            duration: 1.75,
+            y: 0,
+            ease: "power3.out",
+        });
+    }, skills.length * flashInterval - flashInterval / 1.25 + 800);
 
       
     // Function to update Rabat clock
@@ -165,7 +180,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 duration: 1,
                 scrollTo: {
                     y: ".demo-reel",
-                    offsetY: 40
+                    offsetY: 100
                 },
                 ease: "power2.out"
             });        });
@@ -182,7 +197,7 @@ document.addEventListener('DOMContentLoaded', () => {
             gsap.to(window, {
                 duration: 1,
                 scrollTo: {
-                    y: ".work",
+                    y: ".work-sections",
                     offsetY: 0
                 },
                 ease: "power2.out"
