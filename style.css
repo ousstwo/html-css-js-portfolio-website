@@ -444,7 +444,7 @@ background-color: rgb(197, 197, 197, 0); /* CXhange to your desired underline co
     display: flex;
     flex-direction: column; /* Stack sections vertically */
     padding-top: 12vh;
-    padding-right: 8vw;
+    padding-right: 4vw;
     padding-left: 3.42vw;
     color: black;
 }
@@ -453,6 +453,7 @@ background-color: rgb(197, 197, 197, 0); /* CXhange to your desired underline co
     flex: 1; /* Each section takes equal space, you might want to set a min-height */
     display: flex; /* Use flexbox for the halves */
     flex-direction: row; /* Arrange halves side by side */
+    border-top: 1px solid black;
 }
 
 .half {
@@ -484,7 +485,6 @@ background-color: rgb(197, 197, 197, 0); /* CXhange to your desired underline co
 #section1-half2, #section2-half2, #section3-half2 {
     background-color: #FFFFFF;
 }
-
 
   /* Remove border from the bottom of the last th element */
 
