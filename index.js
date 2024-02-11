@@ -30,10 +30,23 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // SET UP
-    gsap.set("#right-widget , .paragraph, .o2-paragraph, .heure, .rabat, .demo-reel-container, .button-wrapper", { y: -window.innerHeight / 10 });
+    gsap.set(".paragraph, .o2-paragraph, .heure, .red-overlay-container, .button-wrapper", { y: -window.innerHeight / 10 });
 
     flashSkill();
-    // After your flashing sequence ends, card down
+
+    // Insert the animation for the .button-wrapper to move up and disappear here
+    const buttonWrapper = document.querySelector('.button-wrapper');
+
+    ScrollTrigger.create({
+      trigger: buttonWrapper,
+      start: 'top 100px',
+      end: '+=100',
+      scrub: true,
+      onEnter: () => gsap.to(buttonWrapper, { y: -100, opacity: 0 }),
+      onLeaveBack: () => gsap.to(buttonWrapper, { y: 0, opacity: 1 }),
+      markers: false // Optional: for debugging purposes
+    });
+
     setTimeout(() => {
         const timeline = gsap.timeline();
 
@@ -93,14 +106,6 @@ document.addEventListener('DOMContentLoaded', () => {
     
     //////
     setTimeout(() => {
-        gsap.to("#right-widget, .heure, .rabat", {
-            duration: 1.75,
-            y: 0,
-            ease: "power2.out",
-        });
-    }, skills.length * flashInterval - flashInterval / 1.25 + 0);
-
-    setTimeout(() => {
         gsap.to(".o2-paragraph", {
             duration: 1.75,
             y: 0,
@@ -125,49 +130,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }, skills.length * flashInterval - flashInterval / 1.25 + 600);
 
     setTimeout(() => {
-        gsap.to(".demo-reel-container", {
+        gsap.to(".red-overlay-container", {
             duration: 1.75,
             y: 0,
             ease: "power3.out",
         });
     }, skills.length * flashInterval - flashInterval / 1.25 + 800);
-
-      
-    // Function to update Rabat clock
-    function updateRabatClock() {
-        var now = new Date(); // Get current time
-        var utc = now.getTime() + now.getTimezoneOffset() * 60000; // Convert to UTC
-        var rabatTime = new Date(utc + (3600000 * 1)); // Rabat is GMT+1
-
-        var hours = rabatTime.getHours();
-        var minutes = rabatTime.getMinutes();
-        var seconds = rabatTime.getSeconds();
-
-        // Add leading zero if less than 10
-        hours = hours < 10 ? '0' + hours : hours;
-        minutes = minutes < 10 ? '0' + minutes : minutes;
-        seconds = seconds < 10 ? '0' + seconds : seconds;
-
-        var timeString = hours + ':' + minutes + ':' + seconds;
-        document.querySelector('.heure').innerText = timeString;
-    }
-
-    const tl = gsap.timeline({
-        scrollTrigger: {
-          start: "top top",
-          end: "+=1300",
-          scrub: 0.5,
-          pin: true,
-          // markers: true
-        }
-      });
-
-      // Adjust these animations for your element
-      tl.to(".trailer", { yPercent: -20, duration: 1 }); // Moves up 50% of its height
-    
-    // Update the clock every second
-    setInterval(updateRabatClock, 1000);
-
+ 
     // Target the demo reel link
     const demoReelLink = document.getElementById('demoReelLink');
     // Ensure the link and target element exist
@@ -179,7 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
             gsap.to(window, {
                 duration: 1,
                 scrollTo: {
-                    y: ".demo-reel",
+                    y: ".red-overlay",
                     offsetY: 100
                 },
                 ease: "power2.out"
@@ -196,7 +165,7 @@ document.addEventListener('DOMContentLoaded', () => {
             gsap.to(window, {
                 duration: 1,
                 scrollTo: {
-                    y: ".demo-reel",
+                    y: ".red-overlay",
                     offsetY: 100
                 },
                 ease: "power2.out"

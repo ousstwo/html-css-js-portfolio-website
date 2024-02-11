@@ -1,28 +1,3 @@
-/* For viewports wider than 1432px */
-@media (min-width: 1432px) {   
-    
-    .container ,.paragraph , .o2-paragraph, .demo-reel-container, .button-wrapper, .work-sections{
-        /* Calculate the remaining viewport width for .container by subtracting #right-widget's fixed width */
-        width: calc(100vw - 320px);
-    }
-
-    #right-widget {
-        width: 300px;
-    }
-}
-
-/* For viewports between 1432px and 992px */
-@media (min-width: 992px) and (max-width: 1431px) {
-    .container ,.paragraph , .o2-paragraph, .demo-reel-container, .button-wrapper, .work-sections {
-        /* Calculate the remaining viewport width for .container by subtracting #right-widget's fixed width */
-        width: calc(100vw - 320px);
-    }
-
-    #right-widget {
-        width: 300px;
-    }
-}
-
 @media (max-width: 992px) {
     .navbar {
         height: 6.1vh;

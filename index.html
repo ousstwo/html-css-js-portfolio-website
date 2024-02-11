@@ -15,7 +15,7 @@
     <meta charset="UTF-8">
     <title>Ouss Two</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="preload" href="assets/fonts/rightgrotesk-compactblack-webfont.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/rightgrotesk-compactblack-webfont.woff" as="font" type="font/woff" crossorigin>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
@@ -72,31 +72,9 @@
     </div>
 </head>
 <body>
-    <div id="right-widget"> 
-        <div class="rounded-rectangle-contact">
-            <p>Interested in Collaborating?</p>
-            <div class="content">
-                <a href="mailto:tounssi.mograph@gmail.com" class="rounded-square">
-                    <img src="assets/arrow-up.svg" alt="Arrow Up">
-                </a>                
-                <p class="start-text">Contact Me<span class="underline"></span></p> <!-- Wrap the underline in a span -->
-            </div>
-        </div>     
-    </div> 
-    
-    <div class="heure">
-        03:35:21
-    </div>
-    <div class="rabat">
-        Rabat
-    </div>
     <div class="container">
         <div class="navbar">
-            <div class="navbar-brand">
-                <div class="logo-ouss-two" id="oussama/tounssi" onclick="window.location.href='https://ousstwo.com';" style="cursor: pointer;">
-                    </div>
-                    <div class="ouss-two" onclick="window.location.href='https://ousstwo.com';" style="cursor: pointer;"> <span>Oussama Tounssi</span> </div>
-                </div>
+                <div class="ouss-two" onclick="window.location.href='https://ousstwo.com';" style="cursor: pointer;"> <span>OUSSTWO</span> </div>  
                 <nav>
                     <ul class="reel-work-about">
                         <li><a href="#" id="demoReelLink">Demo Reel</a></li>
@@ -106,25 +84,28 @@
                 </nav>
             </div>
             <div class="navbar-menu-button" onclick="toggleMenu()">Menu</div>
-        </div>
-        <div class="navbar-underline"></div>
     </div>
+
     <div class="o2-paragraph">
         Multidisciplinary<br>
         Digital Designer
     </div>
-    <div class="paragraph"> I'm a freelance designer with focuses in <br> 2D and 3D motion design, aiming  <br> to captivate your audience. </div>
-
+    <div class="paragraph"> I'm a freelance designer with focuses in <br> 2D and 3D motion design, aiming to captivate  <br> your audience. </div>
     <div class="button-wrapper" id="watchReelLink"> 
         <div class="watch-reel-button"> Watch Reel</div>
     </div>
 
 
-    <div class="demo-reel-container">
-        <div class="demo-reel">
-            <iframe title="vimeo-player" src="https://player.vimeo.com/video/911295213?h=9ee6e90bbf" frameborder="0" allowfullscreen></iframe>
+    <div class="red-overlay-container">
+        <div class="red-overlay">
+            <div class="demo-reel">
+                <video width="100%" height="auto" autoplay loop muted>
+                  <source src="assets/torolo5.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>              
         </div>
-        </div>
+     </div>
 
 
         <div class="work-sections">

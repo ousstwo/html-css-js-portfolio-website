@@ -15,33 +15,15 @@
 }
 
 @font-face {
-    font-family: 'Supply light';
-    src: url('assets/fonts/supply-light-webfont.woff') format('woff'),
-         url('assets/fonts/supply-light-webfont.woff2') format('woff2');
+    font-family: 'Inter light';
+    src: url('assets/fonts/InterTight-Light.woff') format('woff'),
+         url('assets/fonts/InterTight-Light.woff2') format('woff2');
 }
 
 @font-face {
-    font-family: 'Public sans light';
-    src: url('assets/fonts/PublicSans-Light.woff') format('woff'),
-         url('assets/fonts/PublicSans-Light.woff2') format('woff2');
-}
-
-@font-face {
-    font-family: 'Public sans medium';
-    src: url('assets/fonts/PublicSans-Medium.woff') format('woff'),
-         url('assets/fonts/PublicSans-Medium.woff2') format('woff2');
-}
-
-@font-face {
-    font-family: 'Public sans semi bold';
-    src: url('assets/fonts/PublicSans-SemiBold.woff') format('woff'),
-         url('assets/fonts/PublicSans-SemiBold.woff2') format('woff2');
-}
-
-@font-face {
-    font-family: 'Public sans bold';
-    src: url('assets/fonts/PublicSans-Bold.woff') format('woff'),
-         url('assets/fonts/PublicSans-Bold.woff2') format('woff2');
+    font-family: 'Inter medium';
+    src: url('assets/fonts/InterTight-Medium.woff') format('woff'),
+         url('assets/fonts/InterTight-Medium.woff2') format('woff2');
 }
 
 @font-face {
@@ -50,28 +32,18 @@
          url('assets/fonts/InterTight-Bold.woff2') format('woff2');
 }
 
+
+/* Global styles */
 :root {
-    --base-font-size: 3rem; /* Default size, you can change this value */
-    --color: #000000; /* b66940 */
-    --color-muted: #afafaf; /* F6B8C9 */
-    --color-bg: #FFFFFF; /* FDFAFF */
+    --base-font-size: 3rem;
+    --color: #000000;
+    --color-muted: #afafaf;
+    --color-bg: #FFFFFF;
 
-    --o2-parag-fonts: 14vh;
-    --parag-fonts: calc(var(--o2-parag-fonts) / 3.5);
-    --button-fonts: calc(var(--parag-fonts) / 1.618);
-
+    --o2-parag-fonts: 16vh;
+    --parag-fonts: calc(var(--o2-parag-fonts) / 4);
+    --button-fonts: calc(var(--parag-fonts) / 2);
 }
-
-::selection {
-    background: var(--color); /* replace #yourColor with your chosen color code */
-    color: var(--color-bg); /* Optional: This will change the text color during selection */
-  }
-  
-  /* For Mozilla Firefox */
-  ::-moz-selection {
-    background: var(--color); /* replace #yourColor with your chosen color code */
-    color: var(--color-bg); /* Optional: This will change the text color during selection */
-  }
 
 html {
     font-size: var(--base-font-size);
@@ -80,14 +52,32 @@ html {
 body, html {
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
-    overflow-y: auto; /* Only show the vertical scrollbar when needed */
     font-family: 'Right Grotesk Compact', sans-serif;
     display: flex;
     flex-direction: column;
-    background-color: var(--color-bg);; /* New background color */
+    background-color: var(--color-bg);
 }
 
+/* Selection styles */
+::selection,
+::-moz-selection {
+    background: var(--color);
+    color: var(--color-bg);
+}
+
+/* Full screen overlay */
+#full-screen-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--color-bg);
+    z-index: 1000;
+    box-shadow: 0 20px 105px rgba(241, 250, 238, 0.5);
+}
+
+/* Skills container */
 #skills-container {
     position: fixed;
     top: 0;
@@ -101,8 +91,8 @@ body, html {
 }
 
 .overlay-text {
-    display: block; /* ensure it's always showing */
-    line-height: 0.6; /* Reducing the line-height may decrease the space */
+    display: block;
+    line-height: 0.6;
     margin-bottom: 0;
     color: var(--color);
 }
@@ -110,10 +100,9 @@ body, html {
 .skill {
     display: flex;
     align-items: center;
-    position: relative; /* Needed for absolute positioning of pseudo-element and SVG */
-    padding-left: 0.85rem; /* Provide space for the box and SVG */
+    position: relative;
+    padding-left: 0.85rem;
     color: var(--color);
-
 }
 
 .skill::before {
@@ -122,105 +111,72 @@ body, html {
     left: 0;
     top: 50%;
     transform: translateY(-50%);
-    width: 0.7rem; /* Width of the box */
-    height: 0.7rem; /* Height of the box */
-    background-color: var(--color); /* Color of the box */
-    border-radius: 20%; /* Rounded corners */
+    width: 0.7rem;
+    height: 0.7rem;
+    background-color: var(--color);
+    border-radius: 20%;
     z-index: 1;
 }
 
 .skill-icon {
     position: absolute;
-    left: 0; /* Align with the box */
+    left: 0;
     top: 50%;
     transform: translateY(-50%);
-    z-index: 2; /* Above the ::before pseudo-element */
-    width: 0.7rem; /* Match the width of the box */
-    height: 0.7rem; /* Match the height of the box */
+    z-index: 2;
+    width: 0.7rem;
+    height: 0.7rem;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .skill-icon img {
-    width: 0.5rem; /* Set the width as needed */
-    height: auto; /* This will maintain the aspect ratio */
+    width: 0.5rem;
+    height: auto;
 }
 
 .skill, .overlay-text {
-    opacity: 1; /* Ensure elements are fully visible initially */
+    opacity: 1;
 }
 
-#full-screen-overlay {
-    position: fixed; /* or absolute */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background-color: var(--color-bg); /* white card */
-    z-index: 1000; /* Ensure it's above the main content */
-    box-shadow: 0 20px 105px rgb(241, 250, 238, 0.5);
-}
+/* ///////////////////////////////////////// */
 
 .container > * {
     max-width: 100%; /* Ensure children do not cause overflow */
-    overflow-x: hidden; /* Hide horizontal overflow */
-    overflow-y: hidden;
     box-sizing: border-box; /* Include padding and borders in width */
-}
-
-.navbar-underline {
-width: 100%;
-height: 1px;
-background-color: rgb(197, 197, 197, 0); /* CXhange to your desired underline color */
-
 }
 
 /* Add this style for the container div */
 .container {
-    /* background-color: greenyellow; */
     padding-left: 3.42vw; /* Add left padding */
     box-sizing: border-box; /* Include padding in the width */
-
-    position: fixed;
+    position: sticky;
     top: 0;
     width: 100%;
     z-index: 999;
-
-    backdrop-filter: blur(10px); /* Adjust the blur intensity as needed */
-    -webkit-backdrop-filter: blur(10px); /* For Safari compatibility */
-    background: rgb(255, 255, 255, 0.5);
+    color: white;
+    mix-blend-mode: difference;
 }
 
 .navbar {
-    height: 6.1vh;
+    height: 10vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.navbar-brand {
-    display: flex;
-    align-items: center;
-}
-
-.logo-ouss-two {
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    color: var(--color);
-}
-
 .ouss-two {
-    font-family: "Public sans light";
-    font-size: 0.4rem;
+    font-family: "Inter medium";
+    font-size: 0.5rem;
 }
 
 .reel-work-about {
-    font-family: "Public sans light", 'sans serif';
+    font-family: "Inter light";
     list-style: none;
     display: flex;
     margin: 0;
+    margin-right: 3.1vw;
 }
 
 .navbar-menu-button {
@@ -229,124 +185,17 @@ background-color: rgb(197, 197, 197, 0); /* CXhange to your desired underline co
 }
 
 .reel-work-about li {
-    margin-right: 1rem; /* space between reel work about  */
+    margin-right: 0.50rem; /* space between reel work about  */
 }
 
 .reel-work-about li a,
 .contact a {
     text-decoration: none;
-    color: var(--color);
-    font-size: 0.4rem;
+    color: white;
+    font-size: 0.5rem;
     align-items: center;
     display: flex;
     /* Add any other styles for your links here */
-}
-
-.heure, .rabat{
-    font-family: 'Supply light', sans-serif;
-    font-size: 0.4rem;
-    box-sizing: border-box;
-    height: 2vh; /* Adjust the height as needed */
-    position: fixed;
-    color: var(--color);
-    top: 1.85vh;
-}
-
-.heure{
-    right: 210px;
-    font-size: 0.35rem;
-
-}
-
-.rabat{
-    right: 43px;
-    font-size: 0.365rem;
-}
-
-#right-widget {
-    font-family: 'Public sans light', sans-serif;
-    font-size: 0.35rem;
-    box-sizing: border-box;
-    position: fixed;
-    right: 0px;
-    top: 6.1vh;
-    border-radius: 15px; /* Adjust for desired roundness */
-    /* Add any other styling as necessary */
-}
-
-.rounded-rectangle-contact {
-    margin-left: 10px;
-    margin-right: 28px;
-    color: var(--color);;
-    border: 1px solid var(--color-muted);; /* Change as needed */
-    height: 13.92vh;
-    border-radius: 8px; /* Adjust for desired roundness */
-    padding: 15px;
-    padding-top: 20px;
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.rounded-square a {
-    text-decoration: none;
-    color: #000; /* Change as needed */
-}
-
-.rounded-square {
-    border: 1px solid var(--color);; /* Change as needed */
-    border-radius: 6px; /* Adjust for desired roundness */
-    width: 36px; /* Adjust size as needed */
-    height: 36px; /* Adjust size as needed */
-    background-color: var(--color);;
-    background-image: none;
-    background-repeat: no-repeat;
-    background-position: center; /* adjust as needed */
-    background-size: contain; /* or 'cover' depending on how you want it to fit */
-    position: relative; /* Add this if not already present */
-    cursor: pointer; /* Changes the cursor on hover */
-}
-
-.rounded-rectangle-project {
-    
-    margin-left: 10px;
-    margin-right: 28px;
-    color: var(--color);;
-    border: 1px solid var(--color-muted);; /* Change as needed */
-    height: 7.vh;
-    border-radius: 8px; /* Adjust for desired roundness */
-    padding: 15px;
-    padding-top: 20px;
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.content {
-    position: relative;
-    display: flex; /* This turns on flexbox */
-    align-items: center; /* This will vertically center items in the container */
-    bottom: 0px;
-}
-
-.start-text {
-    position: relative; /* This makes it the reference for its absolutely positioned children */
-    display: inline-block; /* Allows the container to fit the width of the content */
-    margin-left: 10px; /* Your existing spacing */
-    font-size: 0.325rem; /* Your existing font size */
-}
-
-.start-text .underline {
-    display: block;
-    width: 0;
-    height: 2px; /* Thickness of the underline */
-    background-color: var(--color); /* Color of the underline */
-    transition: width 0.15s ease-out; /* Smooth transition for the underline */
-    position: absolute;
-    bottom: -5px; /* Adjust as needed */
-    left: 0;
 }
 
 .paragraph > * {
@@ -369,8 +218,8 @@ background-color: rgb(197, 197, 197, 0); /* CXhange to your desired underline co
 }
 
 .o2-paragraph {
-    padding-top: calc(5.5vh + 5.5vh);
-    padding-bottom: 0.85vh;
+    padding-top: 2.5vh;
+    padding-bottom: 0.9vh;
     font-family: "Inter bold", sans-serif;
     font-size: var(--o2-parag-fonts); 
     line-height: calc(1.041 * var(--o2-parag-fonts));
@@ -382,7 +231,7 @@ background-color: rgb(197, 197, 197, 0); /* CXhange to your desired underline co
 
 .paragraph {
     padding-top: 2vh;
-    font-family: "Public sans light", sans-serif;
+    font-family: "Inter light", sans-serif;
     font-size: var(--parag-fonts);
     line-height: calc(var(--parag-fonts) * 1.133);
 }
@@ -391,7 +240,7 @@ background-color: rgb(197, 197, 197, 0); /* CXhange to your desired underline co
     padding-top: 3.5vh;
     padding-left: 3.42vw;
     font-size: var(--button-fonts);
-    font-family: "Public sans light";
+    font-family: "Inter light";
 }
 
 .watch-reel-button > * {
@@ -403,7 +252,7 @@ background-color: rgb(197, 197, 197, 0); /* CXhange to your desired underline co
 .watch-reel-button {
     border: 1px solid var(--color); /* Change as needed */
     border-radius: 30px; /* Adjust for desired roundness */
-    width: 210px; /* Adjust size as needed */
+    width: 180px; /* Adjust size as needed */
     height: 60px; /* Adjust size as needed */
     background-color: #FFFFFF;
     background-image: none;
@@ -419,32 +268,43 @@ background-color: rgb(197, 197, 197, 0); /* CXhange to your desired underline co
     /* Remove line-height if you use flexbox */
 }
 
-.demo-reel-container{
-    padding-top: 16vh;
+.red-overlay-container{
     padding-left: 3.42vw; /* Adjust this value to add padding to the left */
-    padding-right: 8vw;
+    padding-right: 3.42vw;
+    padding-top: 5.5vh;
+    height: 17rem;
+}
+
+.demo-reel video{
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    display: block; 
 }
 
 .demo-reel {
-    position: relative;
-    padding-bottom: 56.25%; /* for 16:9 aspect ratio, for 4:3 use 75% */
-    height: 0;
+    position: relative; /* Position the overlay relative to this container */
 }
 
-.demo-reel iframe {
-    position: absolute;
+.red-overlay {
+    display: flex; /* Use flexbox to center child elements */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-}
+    height: 17rem;
+    background-color: black; /* Change this to any color you desire */
+    border-radius: 20px;
+    opacity: 1; /* Adjust the opacity as needed */
+    overflow: hidden; /* Ensure content does not overflow the container's bounds */
 
+}
 
 .work-sections {
     display: flex;
     flex-direction: column; /* Stack sections vertically */
     padding-top: 12vh;
-    padding-right: 4vw;
+    padding-right: 3.42vw;
     padding-left: 3.42vw;
     color: black;
 }
@@ -463,12 +323,12 @@ background-color: rgb(197, 197, 197, 0); /* CXhange to your desired underline co
 }
 
 .half h3 {
-    font-family: "Public sans medium";
+    font-family: "Inter bold";
     font-size: 3vh;
 }
 
 .half p{
-    font-family: "Public sans light";
+    font-family: "Inter light";
     font-size: 1.85vh;
 }
 
@@ -484,6 +344,12 @@ background-color: rgb(197, 197, 197, 0); /* CXhange to your desired underline co
 
 #section1-half2, #section2-half2, #section3-half2 {
     background-color: #FFFFFF;
+}
+
+.test{
+    position: sticky;
+    top: .5rem;
+
 }
 
   /* Remove border from the bottom of the last th element */
