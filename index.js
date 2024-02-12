@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // SET UP
-    gsap.set(".paragraph, .o2-paragraph, .heure, .red-overlay-container, .button-wrapper", { y: -window.innerHeight / 10 });
+    gsap.set(".paragraph, .o2-paragraph, .container, .red-overlay-container, .button-wrapper", { y: -window.innerHeight / 10 });
 
     flashSkill();
 
@@ -106,6 +106,14 @@ document.addEventListener('DOMContentLoaded', () => {
     
     //////
     setTimeout(() => {
+        gsap.to(".container", {
+            duration: 1.75,
+            y: 0,
+            ease: "power2.out",
+        });
+    }, skills.length * flashInterval - flashInterval / 1.25 + 0);
+
+    setTimeout(() => {
         gsap.to(".o2-paragraph", {
             duration: 1.75,
             y: 0,
@@ -149,7 +157,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 duration: 1,
                 scrollTo: {
                     y: ".red-overlay",
-                    offsetY: 100
+                    offsetY: 115
                 },
                 ease: "power2.out"
             });        });
@@ -166,7 +174,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 duration: 1,
                 scrollTo: {
                     y: ".red-overlay",
-                    offsetY: 100
+                    offsetY: 115
                 },
                 ease: "power2.out"
             });        });

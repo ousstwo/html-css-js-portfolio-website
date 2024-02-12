@@ -15,22 +15,35 @@
 }
 
 @font-face {
-    font-family: 'Inter light';
-    src: url('assets/fonts/InterTight-Light.woff') format('woff'),
-         url('assets/fonts/InterTight-Light.woff2') format('woff2');
+    font-family: 'Helvetica Neue Thin';
+    src: url('assets/fonts/HelveticaNeue-Thin.woff') format('woff'),
+         url('assets/fonts/HelveticaNeue-Thin.woff2') format('woff2');
 }
 
 @font-face {
-    font-family: 'Inter medium';
-    src: url('assets/fonts/InterTight-Medium.woff') format('woff'),
-         url('assets/fonts/InterTight-Medium.woff2') format('woff2');
+    font-family: 'Helvetica Neue Light';
+    src: url('assets/fonts/HelveticaNeue-Light.woff') format('woff'),
+         url('assets/fonts/HelveticaNeue-Light.woff2') format('woff2');
 }
 
 @font-face {
-    font-family: 'Inter bold';
-    src: url('assets/fonts/InterTight-Bold.woff') format('woff'),
-         url('assets/fonts/InterTight-Bold.woff2') format('woff2');
+    font-family: 'Helvetica Neue Medium';
+    src: url('assets/fonts/HelveticaNeue-Medium.woff') format('woff'),
+         url('assets/fonts/HelveticaNeue-Medium.woff2') format('woff2');
 }
+
+@font-face {
+    font-family: 'Helvetica Neue Bold';
+    src: url('assets/fonts/HelveticaNeue-Bold.woff') format('woff'),
+         url('assets/fonts/HelveticaNeue-Bold.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Helvetica Neue Heavy';
+    src: url('assets/fonts/HelveticaNeue-Heavy.woff') format('woff'),
+         url('assets/fonts/HelveticaNeue-Heavy.woff2') format('woff2');
+}
+
 
 
 /* Global styles */
@@ -40,9 +53,9 @@
     --color-muted: #afafaf;
     --color-bg: #FFFFFF;
 
-    --o2-parag-fonts: 16vh;
-    --parag-fonts: calc(var(--o2-parag-fonts) / 4);
-    --button-fonts: calc(var(--parag-fonts) / 2);
+    --o2-parag-fonts: 4.1rem;
+    --parag-fonts: calc(var(--o2-parag-fonts) / 3.5);
+    --button-fonts: calc(var(--parag-fonts) / 2.3);
 }
 
 html {
@@ -160,6 +173,8 @@ body, html {
 }
 
 .navbar {
+    padding-top: 10px;
+    padding-left: 12px;
     height: 10vh;
     display: flex;
     justify-content: space-between;
@@ -167,12 +182,12 @@ body, html {
 }
 
 .ouss-two {
-    font-family: "Inter medium";
+    font-family: "Helvetica Neue Medium";
     font-size: 0.5rem;
 }
 
 .reel-work-about {
-    font-family: "Inter light";
+    font-family: "Helvetica Neue medium";
     list-style: none;
     display: flex;
     margin: 0;
@@ -218,9 +233,8 @@ body, html {
 }
 
 .o2-paragraph {
-    padding-top: 2.5vh;
-    padding-bottom: 0.9vh;
-    font-family: "Inter bold", sans-serif;
+    letter-spacing: -0.225rem;
+    font-family: "Helvetica Neue Bold", sans-serif;
     font-size: var(--o2-parag-fonts); 
     line-height: calc(1.041 * var(--o2-parag-fonts));
     margin: 0; /* Center the div and ensure no vertical margins */
@@ -230,17 +244,18 @@ body, html {
 }
 
 .paragraph {
-    padding-top: 2vh;
-    font-family: "Inter light", sans-serif;
+    padding-top: 4vh;
+    letter-spacing: -0.015rem;
+    font-family: "Helvetica Neue Regular", sans-serif;
     font-size: var(--parag-fonts);
     line-height: calc(var(--parag-fonts) * 1.133);
 }
 
 .button-wrapper{
-    padding-top: 3.5vh;
+    padding-top: 6vh;
     padding-left: 3.42vw;
     font-size: var(--button-fonts);
-    font-family: "Inter light";
+    font-family: "Helvetica Neue Regular", sans-serif;
 }
 
 .watch-reel-button > * {
@@ -251,8 +266,7 @@ body, html {
 
 .watch-reel-button {
     border: 1px solid var(--color); /* Change as needed */
-    border-radius: 30px; /* Adjust for desired roundness */
-    width: 180px; /* Adjust size as needed */
+    width: 205px; /* Adjust size as needed */
     height: 60px; /* Adjust size as needed */
     background-color: #FFFFFF;
     background-image: none;
@@ -271,7 +285,7 @@ body, html {
 .red-overlay-container{
     padding-left: 3.42vw; /* Adjust this value to add padding to the left */
     padding-right: 3.42vw;
-    padding-top: 5.5vh;
+    padding-top: 11vh;
     height: 17rem;
 }
 
@@ -303,7 +317,7 @@ body, html {
 .work-sections {
     display: flex;
     flex-direction: column; /* Stack sections vertically */
-    padding-top: 12vh;
+    padding-top: calc(12vh + 11vh);
     padding-right: 3.42vw;
     padding-left: 3.42vw;
     color: black;
@@ -323,12 +337,12 @@ body, html {
 }
 
 .half h3 {
-    font-family: "Inter bold";
+    font-family: "Helvetica Neue Bold";
     font-size: 3vh;
 }
 
 .half p{
-    font-family: "Inter light";
+    font-family: "Helvetica Neue Light";
     font-size: 1.85vh;
 }
 
