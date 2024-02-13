@@ -164,8 +164,8 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault(); // Prevent the default anchor link behavior
             lenis.scrollTo('.red-overlay', {
                 offset: -115, // Replace offsetY with offset if needed
-                duration: 1, // Duration of the scroll animation in seconds
-                easing: t => t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1
+                duration: 1.2, // Duration of the scroll animation in seconds
+                easing: t => (--t) * t * t + 1
             });
         });
     }
@@ -179,7 +179,7 @@ document.addEventListener('DOMContentLoaded', () => {
             lenis.scrollTo('.red-overlay', {
                 offset: -115, // Adjust this value as needed
                 duration: 1, // Scroll animation duration in seconds
-                easing: t => t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1
+                easing: t => (--t) * t * t + 1
             });
         });
     }
@@ -191,7 +191,7 @@ document.addEventListener('DOMContentLoaded', () => {
             lenis.scrollTo('.work-sections', {
                 offset: 0, // Offset from the top of the target section
                 duration: 1, // Duration of the scroll animation in seconds
-                easing: t => t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1
+                easing: t => (--t) * t * t + 1
             });
         });
     }
