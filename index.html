@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Ouss Two</title>
     <script>
         if ('scrollRestoration' in history) {
             history.scrollRestoration = 'manual';
@@ -19,13 +18,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.34/dist/lenis.min.js"></script> 
     <script type="module" src="index.js" defer></script>
-        <div id="full-screen-overlay">
+        <div id="full-screen-overlay" >
             <div id="skills-container">
                 <div class="overlay-text">ALL THINGS</div>
-    
-                <!-- Repeat the following block for each skill -->
-
                 <div class="skill" id="skill-sound-design">
                     <div class="skill-icon">
                         <img src="assets/sound.svg" alt="Sound Design Icon">
@@ -71,78 +68,80 @@
         </div>
     </div>
 </head>
-<body>
+<body data-scroll-container>
     <div class="container">
         <div class="navbar">
-                <div class="ouss-two" onclick="window.location.href='https://ousstwo.com';" style="cursor: pointer;"> <span>ousstwo</span> </div>  
-                <nav>
-                    <ul class="reel-work-about">
-                        <li><a href="#" id="demoReelLink">Demo Reel</a></li>
-                        <li><a href="#" id="workLink">Work</a></li>
-                        <li><a href="#">About</a></li>
-                    </ul>
-                </nav>
+            <div class="ouss-two" onclick="window.location.href='https://ousstwo.com';" style="cursor: pointer;">
+                <span>ousstwo</span>
             </div>
-            <div class="navbar-menu-button" onclick="toggleMenu()">Menu</div>
+            <nav>
+                <ul class="reel-work-about">
+                    <li><a href="#" id="demoReelLink">Demo Reel</a></li>
+                    <li><a href="#" id="workLink">Work</a></li>
+                    <li><a href="#">About</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="navbar-menu-button" onclick="toggleMenu()">Menu</div>
     </div>
 
     <div class="o2-paragraph">
-
         DIGITAL DESIGNER
     </div>
-    <div class="paragraph"> I'm a freelance designer with focuses in <br> 2D and 3D motion design, aiming to captivate  <br> your audience. </div>
+    <div class="paragraph">
+        I'm a freelance designer with focuses in <br>
+        2D and 3D motion design, aiming to captivate  <br>
+        your audience.
+    </div>
     <div class="button-wrapper" id="watchReelLink"> 
         <div class="watch-reel-button"> Watch Reel</div>
     </div>
-
 
     <div class="red-overlay-container">
         <div class="red-overlay">
             <div class="demo-reel">
                 <video width="100%" height="auto" autoplay loop muted>
-                  <source src="assets/torol5o5.mp4" type="video/mp4">
-                  Your browser does not support the video tag.
+                    <source src="assets/torolo95.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
                 </video>
-              </div>              
+            </div>              
         </div>
-     </div>
+    </div>
 
-
-        <div class="work-sections">
-            <div class="section" id="section1">
-                <div class="half" id="section1-half1">
-                    <!-- Content for the first half of section 1 -->
-                    <h3>Design Dailies</h3>
-                    <p>Design Personal Project</p>
-                </div>
-                <div class="half" id="section1-half2">
-                    <!-- Content for the second half of section 1 -->
-                    <p>I took on a project to make a new poster each day from words like "dance" or "travel." It was a fun challenge that improved my design skills. Each day, I turned a new word into art, pushing my creativity.</p>
-                </div>
+    <div class="work-sections">
+        <div class="section" id="section1">
+            <div class="half" id="section1-half1">
+                <!-- Content for the first half of section 1 -->
+                <h3>Design Dailies</h3>
+                <p>Design Personal Project</p>
             </div>
-            <div class="section" id="section2">
-                <div class="half" id="section2-half1">
-                    <!-- Content for the first half of section 2 -->
-                    <h3>Music Box</h3>
-                    <p>Speculative ad (3D and 2D)</p>
-                </div>
-                <div class="half" id="section2-half2">
-                    <!-- Content for the second half of section 2 -->
-                    <p>A project visualizing part of an ad for a Christmas music box, focusing on 3D techniques and incorporating 2D touches. I took care of the modeling, lighting, texturing, rendering, and animation.</p>
-                </div>
-            </div>
-            <div class="section" id="section3">
-                <div class="half" id="section3-half1">
-                    <!-- Content for the first half of section 3 -->
-                    <h3>Trading Visuals</h3>
-                    <p>Paid animation work</p>
-                </div>
-                <div class="half" id="section3-half2">
-                    <!-- Content for the second half of section 3 -->
-                    <p>I produced 16 social media reels featuring animated visuals on trading and self-improvement concepts. This project showcased my ability to translate complex ideas into engaging short-form content. And garnered over 350k views.</p>
-                </div>
+            <div class="half" id="section1-half2">
+                <!-- Content for the second half of section 1 -->
+                <p>I took on a project to make a new poster each day from words like "dance" or "travel." It was a fun challenge that improved my design skills. Each day, I turned a new word into art, pushing my creativity.</p>
             </div>
         </div>
-        
-      </body>
+        <div class="section" id="section2">
+            <div class="half" id="section2-half1">
+                <!-- Content for the first half of section 2 -->
+                <h3>Music Box</h3>
+                <p>Speculative ad (3D and 2D)</p>
+            </div>
+            <div class="half" id="section2-half2">
+                <!-- Content for the second half of section 2 -->
+                <p>A project visualizing part of an ad for a Christmas music box, focusing on 3D techniques and incorporating 2D touches. I took care of the modeling, lighting, texturing, rendering, and animation.</p>
+            </div>
+        </div>
+        <div class="section" id="section3">
+            <div class="half" id="section3-half1">
+                <!-- Content for the first half of section 3 -->
+                <h3>Trading Visuals</h3>
+                <p>Paid animation work</p>
+            </div>
+            <div class="half" id="section3-half2">
+                <!-- Content for the second half of section 3 -->
+                <p>I produced 16 social media reels featuring animated visuals on trading and self-improvement concepts. This project showcased my ability to translate complex ideas into engaging short-form content. And garnered over 350k views.</p>
+            </div>
+        </div>
+    </div>
+</body>
 </html>

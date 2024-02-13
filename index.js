@@ -1,4 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const lenis = new Lenis({
+      lerp: 0.1,
+      smooth: true
+    });
+    
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    
+    requestAnimationFrame(raf);
     const skills = document.querySelectorAll('.skill');
     const overlayText = document.querySelector('.overlay-text');
     let currentSkill = 0;
@@ -145,56 +156,43 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, skills.length * flashInterval - flashInterval / 1.25 + 800);
  
+    // USED Ease-Out Cubic in all 3
     // Target the demo reel link
     const demoReelLink = document.getElementById('demoReelLink');
-    // Ensure the link and target element exist
     if (demoReelLink) {
         demoReelLink.addEventListener('click', function(e) {
             e.preventDefault(); // Prevent the default anchor link behavior
-
-            // Use GSAP to scroll to the demo reel section. Adjust the selector as needed.
-            gsap.to(window, {
-                duration: 1,
-                scrollTo: {
-                    y: ".red-overlay",
-                    offsetY: 115
-                },
-                ease: "power2.out"
-            });        });
+            lenis.scrollTo('.red-overlay', {
+                offset: -115, // Replace offsetY with offset if needed
+                duration: 1, // Duration of the scroll animation in seconds
+                easing: t => t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1
+            });
+        });
     }
 
     const watchReelLink = document.getElementById('watchReelLink');
-    // Ensure the link and target element exist
     if (watchReelLink) {
         watchReelLink.addEventListener('click', function(e) {
             e.preventDefault(); // Prevent the default anchor link behavior
-
-            // Use GSAP to scroll to the demo reel section. Adjust the selector as needed.
-            gsap.to(window, {
-                duration: 1,
-                scrollTo: {
-                    y: ".red-overlay",
-                    offsetY: 115
-                },
-                ease: "power2.out"
-            });        });
+    
+            // Use Lenis to scroll to the target section
+            lenis.scrollTo('.red-overlay', {
+                offset: -115, // Adjust this value as needed
+                duration: 1, // Scroll animation duration in seconds
+                easing: t => t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1
+            });
+        });
     }
 
-    // Target the demo reel link
     const workLink = document.getElementById('workLink');
-    // Ensure the link and target element exist
     if (workLink) {
         workLink.addEventListener('click', function(e) {
             e.preventDefault(); // Prevent the default anchor link behavior
-
-            // Use GSAP to scroll to the demo reel section. Adjust the selector as needed.
-            gsap.to(window, {
-                duration: 1,
-                scrollTo: {
-                    y: ".work-sections",
-                    offsetY: 0
-                },
-                ease: "power2.out"
-            });        });
+            lenis.scrollTo('.work-sections', {
+                offset: 0, // Offset from the top of the target section
+                duration: 1, // Duration of the scroll animation in seconds
+                easing: t => t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1
+            });
+        });
     }
 });
