@@ -388,7 +388,7 @@ body, html {
 }
 
 .photo-container {
-    max-width: 80%;
+    max-width: 100%;
     width: auto;
     margin: auto;
     padding-top: 20px;
