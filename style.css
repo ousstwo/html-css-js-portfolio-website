@@ -387,37 +387,39 @@ body, html {
 
 }
 
-.photo-container{
-    max-width: 100%;
+.photo-container {
+    max-width: 80%;
     width: auto;
     margin: auto;
     padding-top: 20px;
 }
 
-.photo-gallery{
+.photo-gallery {
     display: flex;
     gap: 20px;
 }
 
-.column{
+.column {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-.photo{
-    width: 100%; /* Set width to 100% */
+.photo {
+    width: 100%;
     max-width: 450px; /* Set a max-width to control the size */
     height: auto; /* Let the height vary based on aspect ratio */
     overflow: hidden; /* Hide overflow to prevent shifting */
+    position: relative; /* Needed for absolutely positioned content */
 }
 
-.photo img{
+.photo img {
     width: 100%; /* Ensure the image fills the container */
-    height: auto; /* Allow the height to vary based on aspect ratio */
+    height: 100%; /* Ensure the image fills the container */
     object-fit: cover; /* Maintain aspect ratio while covering container */
     border-radius: 10px;
 }
+
 
 @media(max-width:768px){
     .photo-gallery{
