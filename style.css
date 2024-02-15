@@ -388,35 +388,34 @@ body, html {
 }
 
 .photo-container {
-    max-width: 100%;
-    width: auto;
+    max-width: 80%;
     margin: auto;
     padding-top: 20px;
 }
 
 .photo-gallery {
     display: flex;
+    flex-wrap: wrap; /* Allow items to wrap as needed */
     gap: 20px;
+    justify-content: center; /* Adjust this to align your columns as desired */
 }
 
 .column {
+    flex: 1; /* Allow columns to grow and shrink as needed */
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
 .photo {
-    width: 100%;
-    max-width: 450px; /* Set a max-width to control the size */
-    height: auto; /* Let the height vary based on aspect ratio */
-    overflow: hidden; /* Hide overflow to prevent shifting */
-    position: relative; /* Needed for absolutely positioned content */
+    overflow: hidden;
+    position: relative;
 }
 
 .photo img {
     width: 100%; /* Ensure the image fills the container */
-    height: 100%; /* Ensure the image fills the container */
-    object-fit: cover; /* Maintain aspect ratio while covering container */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Cover the container fully while maintaining aspect ratio */
     border-radius: 10px;
 }
 
@@ -426,6 +425,7 @@ body, html {
         flex-direction: column;
     }
 }
+
 
   /* Remove border from the bottom of the last th element */
 

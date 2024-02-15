@@ -195,4 +195,23 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    const photos = document.querySelectorAll('.photo');
+
+    photos.forEach(photo => {
+        const img = document.createElement('img');
+        img.src = photo.getAttribute('data-img-src'); // Assuming you've set the desired image source in a data attribute
+        img.loading = "lazy";
+        img.alt = ""; // Set alt text as appropriate
+        img.style.display = 'none';
+
+        img.onload = function() {
+            photo.innerHTML = ''; // Remove the skeleton
+            img.style.display = 'block';
+            photo.appendChild(img); // Add the loaded image
+        };
+
+        photo.appendChild(img);
+    });
+
 });
